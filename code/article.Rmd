@@ -1,0 +1,137 @@
+---
+title: "Impacto do COVID-19 no segmento de academia de Bauru"
+author: "Alexandre Cruz Nicolas, Carina Nascimento, Danielli Santos da Silva, Emerson Carlos Sarti Ferrasi, Uemerson Pinheiro Junior"
+date: '2020'
+abstract: Adicionar o resumo do artigo aqui.
+tags: COVID-19
+lang: pt-BR
+fontsize: 12pt
+toc: yes
+toc-depth: 3
+affiliation: Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP/Bauru
+e-mail: uemersonpinheirojunior@gmail.com
+indent: true
+output:
+  pdf_document: default
+    
+  word_document: default
+  
+header-includes:
+   - \usepackage{indentfirst}
+---
+
+\setlength{\parindent}{0.5cm}
+
+## 1. Contextualização da Pesquisa
+
+De acordo com Malhotra (2012, p. 31), a "definição do problema é a etapa mais importante” da pesquisa e pode ser entendida como um conjunto de informações necessárias para facilitar a tomada de decisões num processo estratégico. O problema irá definir qual será o propósito da pesquisa que necessita de atenção e informações completas, para que possa resultar em dados e informações úteis e precisas. Nesse sentido, o presente projeto de pesquisa visa levantar informações sobre o COVID-19, doença infeciosa causada pelo coronavírus da síndrome respiratória aguda grave 2. O primeiro caso de COVID-19 no mundo, foi em  dezembro de 2019 na cidade de Wuhan, na China, e o surto inicial deu origem a uma pandemia global com 8 milhões de casos confirmados e 466 mil mortes em todo o mundo (WIKIPEDIA, 2020). No Brasil, até o momento existem mais de 1 milhão de pessoas infectadas e cerca de 50 mil mortes. Durante todo esse período, como se pode observar, milhões de vida foram perdidas e também uma série de empresas, negócios e empregos foram afetados. Acredita-se que todos os setores da economia foram afetados, no entanto, alguns em especial, como as academias, possuem reflexos ainda maiores, pois ainda não tiveram a liberação de retomada, dos governos municipal e estadual. Dentro desse contexto, a presente pesquisa visa compreender os efeitos do coronavírus na vida das pessoas, em especial na cidade Bauru, que já computa quase mil casos da doença e tiveram diversos setores impactados,  como o segmento das academias.
+
+Portanto, para contemplar a pesquisa a ser realizada, para o trabalho final da disciplina de Ciência de Dados, o problema a ser solucionado diz respeito ao seguinte questionamento: Qual o impacto do COVID-19 (coronavírus) nas academias da cidade de Bauru?
+
+## 2. Hipótese
+
+A hipótese, segundo Rudio (2007), significa:
+
+\setlength{\parindent}{0pt}
+\setlength{\leftskip}{3cm}
+“uma suposição que se faz na tentativa de explicar o que se desconhece. Esta suposição tem por característica o fato de ser provisória, devendo, portanto, ser testada para se verificar sua validade. Trata-se, então, de se antecipar um conhecimento, na expectativa de ser comprovado para poder ser admitido.”, (2007, p. 97).
+
+<!-- Restaura o leftskip para 0.5 cm -->
+\setlength{\leftskip}{0cm}
+\setlength{\parindent}{0.5cm}
+
+De acordo com o conceito de Rudio (2007) trata-se de uma pressuposição ou teoria que o pesquisador faz sobre uma característica da população que está sendo investigada.
+
+Pressupõe-se que o público potencial, empresários do segmento de academia da cidade de Bauru, tiveram uma perda substancial do número de alunos em seus espaços, pois com o COVID-19, o  público frequentador foi impedido de realizar seus treinos na academia e optou por realizar as mesmas atividades, de forma de adaptada, em suas casas. Acredita-se que esse movimento, fez com que os alunos cancelassem suas matrículas.
+
+## 3. Justificativa
+
+A presente pesquisa torna-se relevante, pois visa ressaltar a importância de uma melhor compreensão do impacto do COVID-19 e seus desdobramentos no segmento de academia de Bauru, que conforme dito anteriormente, pressupõe-se que tenha sofrido um grande impacto. Ou seja, a pesquisa se justifica por possibilitar a análise da temática e com isso, promover um impacto positivo no campo de estudo do setor. Nesse sentido, acredita-se que por meio da pesquisa será possível identificar a situação das academias da cidade de Bauru, tendo em vista a pandemia do Coronavírus e a possível influência em seus negócios.
+
+## 4. Objetivo Geral e Objetivos Específicos
+
+### 4.1 Objetivo Geral
+
+* Identificar o impacto do COVID-19 no consumo de atividades em academias na cidade de Bauru. 
+
+### 4.2  Objetivos Específicos
+
+* Conhecer o público-alvo frequentador das academias
+* Identificar a adaptação das academias nesse novo cenário;
+* Observar o impacto do COVID-19 no número de matrículas das academias
+* Buscar compreensão do consumo de atividades de academia pós-COVID 19
+
+## 5. Caracterização da Pesquisa
+
+Para este projeto acadêmico, o tipo de pesquisa mais adequado ao problema encontrado é a Survey.
+
+Segundo Babbie (1999) a Pesquisa Survey, termo em inglês que se destina a pesquisa em grande escala caracteriza-se por ser uma abordagem quantitativa, que visa apresentar as opiniões das pessoas por meio de questionários ou entrevistas.
+
+Bastaste utilizada em pesquisas eleitorais apresenta os resultados obtidos por um recorte da população tem como seus primeiros registros de uso o ano de 1880 onde Marx enviou 25 mil questionários pelos correios para os trabalhadores franceses com o objetivo de levantar que tipo de exploração esses trabalhadores sofriam por parte das classes patronais. Já no século XX esta técnica de pesquisa passou a ser utilizada com fins comerciais para o levamento de opiniões sobre produtos e empresas.
+
+Babbie (2001) elenca sete características gerais da pesquisa Survey:
+
+1. Os dados facilitam a aplicação cuidadosa do pensamento lógico;
+2. Sempre que o pesquisador procura explicar as razões para e as fontes de eventos, características e correlações observados, a pesquisa deve assumir uma postura determinística baseada nas relações de causa e efeito;
+3. Surveys amostrais são realizados para entender-se a população maior da qual a amostra foi inicialmente selecionada. Análises explicativas em pesquisas de survey visam a desenvolver proposições gerais sobre o comportamento humano;
+4. Replicar um achado entre subgrupos diferentes (por sexo, por idade, etc.) fortalece a certeza de que ele representa um fenômeno geral na sociedade;
+5. Com a pesquisa, busca-se o máximo de compreensão com o menor número de variáveis possível; 
+6. A conceituação e a medição de variáveis estão no âmago da prática científica. Se as variáveis não são adequadamente conceituadas e medidas, correlações observadas entre elas podem não fazer sentido. Assim, se observadores independentes discordam sobre como variáveis foram medidas, podem discordar logicamente da conclusão geral;
+7. Nunca esquecer que o ato de medir é um dos problemas da pesquisa em survey. A simples presença de pesquisadores pode afetar os entrevistados. Pedir uma opinião pode cristalizar uma opinião que existia. Alguns respondentes podem formar opiniões na hora. 
+
+Por isso, é necessário que o cientista social tenha uma compreensão mais sofisticada da medição e da conceituação.
+
+## 6. Método de Pesquisa
+
+De acordo com Fonseca (2002) o método de pesquisa é a escolha de um processo sistemático para a descrição de fenômenos, assemelhando-se ao método científico que consiste em delimitar um problema, realizar observações e interpretá-los com base nos dados coletados e nas teorias existentes.
+
+A pesquisa quantitativa se apoia basicamente em dados estatísticos e tem como objetivo e tem como objetivo gerar medidas precisas e de confiança que possibilitem uma análise estatística.
+
+Erros de análise e interpretação também são evitados na pesquisa quantitativa que também possibilita ao pesquisador fazer o uso de pesquisas anteriores a fim de escolher o melhor arcabouço teórico para a escolha das variáveis.
+
+A pesquisa qualitativa deve ser clara e objetiva e para POLIT et al., (2004) se caracteriza por:
+
+* Focaliza uma quantidade pequena de conceitos
+* Inicia com ideias preconcebidas do modo pelo qual os conceitos estão relacionados
+* Utiliza procedimentos estruturados e instrumentos formais para coleta de dados
+* Coleta os dados mediante condições de controle
+* Enfatiza a objetividade, na coleta e análise dos dados
+* Analisa os dados numéricos através de procedimentos estatísticos
+
+### 6.1 Público/ População Universo
+
+Como população de interesse tem se os proprietários de academias de ginástica da cidade Bauru- SP. A escolha deste ramo empresarial se deu em função da importância que este segmento da economia apresenta na atualidade. 
+
+Na atualidade as academias não são mais consideradas apenas locais para a prática de atividades físicas, mas sim espaços de convivência social como aponta Arsego (2002) ao considerar os laços de amizade que se formam entre educadores e alunos.
+
+Há de se considerar também que além dos fatores estéticos as academias trazem importante contribuição à saúde de seus alunos quando as atividades são praticadas de forma regular. 
+
+A cidade de Bauru tem cerca de 200 academias que desde o mês de março tiveram suas atividades suspensas em função da quarentena para a redução da disseminação da Covid-19.
+
+Desde a paralização das atividades presencias, muitas academias precisaram se adequar aos formatos de aulas online com o objetivo de manter sua clientela. 
+
+Observa-se que  que no dia 01 de junho por meio de um decreto municipal as academias puderam reabrir seguindo normas de higiene e distanciamento social para alunos com prescrição médica para a prática de atividades físicas , porém em novo decreto municipal publicado no dia 21 de junho tal permissão foi cancelada em função do avanço da pandemia pela cidade. 
+
+Diante deste cenário observa-se a importância de compreender quais os impactos que a pandemia teve sobre as academias e como os proprietários se adaptaram as novas modalidades de práticas de exercícios por meio dos recursos tecnológicos.
+
+### 6.2 Amostragem
+
+Entende-se por amostragem a quantidade de pessoas pertencentes a um mesmo grupo e que são selecionadas para participação em determinada pesquisa, trata-se de um sub conjunto como afirma May (2004).
+
+As amostras podem ser de natureza probabilísticas, onde tem a capacidade de expressar matematicamente o grupo selecionado. Podem também ser não probabilística e nesse caso requerem uma moldura de amostragem.
+
+### 6.3 Instrumentos e técnicas de coleta
+
+Para a pesquisa Survey o uso de questionários se configura como uma opção eficiente para a coleta de dados.
+
+Ressalta-se que a construção do questionário deve contemplar os objetivos pretendidos na pesquisa como aponta Babbie (2001) para a posterior distribuição aos sujeitos da pesquisa. 
+
+Optou-se pela construção de um formulário de pesquisa online disponível pela ferramenta google forms. A escolha deste instrumento deu-se em função da praticidade na coleta dos dados, bem como na boa aceitação que esta modalidade de questionário tem na sociedade, principalmente por ser de fácil acesso e rapidez. 
+
+### 6.4 Análise dos dados
+
+## 7. Referências
+
+POLIT, D. F.; BECK, C. T.; HUNGLER, B. P. Fundamentos de pesquisa em enfermagem: métodos, avaliação e utilização. Trad. de Ana Thorell. 5. ed. Porto Alegre: Artmed, 200
+
+MAY, T. Pesquisa social: questões, métodos e processos 1Tim May; trad. Carlos Alberto Silveira Netto Soares. - 3.ed. - Porto Alegre: Artmed, 2004.

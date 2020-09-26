@@ -1,0 +1,3 @@
+"0","# Quantidade de filhos"
+"0","filhos = table(df$filhos)"
+"0","pct.f <- round(filhos/sum(filhos)*100, digits=1)"

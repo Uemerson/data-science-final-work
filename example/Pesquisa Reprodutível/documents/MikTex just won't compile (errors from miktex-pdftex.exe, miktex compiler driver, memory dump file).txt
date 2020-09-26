@@ -1,0 +1,6 @@
+MikTex just won't compile (errors from miktex-pdftex.exe, miktex compiler driver, memory dump file)
+
+miktex has problems to create the pdflatex format. But the error doesn't say why it failed. Open a command line in some empty, temporary folder and run the command:
+miktex-pdftex.exe --initialize  --halt-on-error --alias=pdflatex --job-name=pdflatex -tcx=cp227.tcx --enable-etex pdflatex.ini
+If it errors, show the log-file. 
+– Ulrike Fischer Jun 15 at 6:52

@@ -1,0 +1,6 @@
+"0","pie(pct.motivo, "
+"0","    labels = paste(names(pct.motivo),pct.motivo,""%""),"
+"0","    edges = 200, radius = 1,"
+"0","    clockwise = F, angle = 30, "
+"0","    col = c(""purple"", ""green3"", ""black"", ""blue"", ""red"", ""yellow"","
+"0","            ""mistyrose"",""lightcyan"", ""lavender""))"

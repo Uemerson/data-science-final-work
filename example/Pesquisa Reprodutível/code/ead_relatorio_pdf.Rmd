@@ -1,0 +1,506 @@
+---
+title: "Uso das Mídias Sociais no Ensino Superior"
+author: "Prof. Adj. João Pedro Albino"
+date: '2017'
+abstract: Com o intuito de examinar como a comunidade acadêmica (professores e alunos)
+  das IES encaram o uso das redes sociais nas atividades de ensino-aprendizagem, foi
+  realizada uma pesquisa exploratória para identificar alguns fatores que facilitam
+  ou dificultam o uso de tais mídias no ensino superior.
+tags: Mídias sociais
+lang: pt-BR
+fontsize: 12pt
+toc: yes
+toc-depth: 3
+affiliation: Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP/Bauru
+e-mail: jp.albino@unesp.br
+subtitle: Relatório Preliminar
+output:
+  pdf_document: default
+    
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width = "70%", lang="pt-BR", dpi=100)
+## Lembrete 1: Para "rodar" este pacote no RStudio, deve-se intalar o pacote
+## correspondente ao seu sistema operacional: 
+# Windows: MiKTeX (Complete) - http://miktex.org/2.9/setup
+# Mac OS X: TexLive 2013 (Full) - http://tug.org/mactex/ e
+# Linux: Use system package manager
+#
+# Deve-se instalar também, os pacotes knitr e rmarkdown
+if (!require(knitr)) install.packages('knitr')
+if (!require(rmarkdown)) install.packages('rmarkdown')
+#
+## Default repo
+local({r <- getOption("repos")
+       r["CRAN"] <- "https://brieger.esalq.usp.br/CRAN/" 
+       options(repos=r)
+})
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Limpando a área de trabalho
+rm(list = ls())
+dev.set(1)
+#Os gráficos aparecerão no dispositivo de vídeo padrão (Aba "Plots" no RStudio IDE)
+# Carregando os pacotes necessários
+if (!require(tidyverse)) install.packages("tidyverse")
+#"tidyverse" é um conjunto de pacotes selecionados desenvolvidos na linguagem R idealizados para Ciência de Dados. 
+#Os pacotes que compõem o tidyverse compartilham uma filosofia básica de design, gramática e estruturas de dados.
+#https://www.tidyverse.org/
+library("readxl")
+#O pacote readxl facilita a extração de dados do Excel.
+#Não possui dependências externas sendo fácil de instalar e usar em todos os sistemas operacionais.
+``` 
+
+## 1.Introdução
+Uma grande parte dos professores das Instituições de Ensino Superior (IES) têm consciência do poder das mídias sociais e um número significativo destes docentes já se utilizam das tecnologias digitais nas suas atividades acadêmicas. Porém, os níveis de adoção das mídias sociais para fins educacionais nas IES, ainda estão muito aquém do uso pessoal. (GUBERT e MACHADO, 2009). 
+
+A adequação do sistema educacional superior para o enfrentamento dos desafios da sociedade do conhecimento, em um país como o Brasil, deve necessariamente passar pelo uso da tecnologia digital e encarar a modernização do sistema, afirmam BERNHEIM e CHAUÍ (2008).
+
+Com o intuito de examinar como a comunidade acadêmica (professores e alunos) das IES encaram o uso das redes sociais nas atividades de ensino-aprendizagem, foi realizada uma pesquisa exploratória para identificar alguns fatores que facilitam ou dificultam o uso de tais mídias no ensino superior.
+
+Um teste piloto foi realizado utilizando uma amostra de 29 respondentes para perscrutar a validade do estudo. Os resultados deste teste piloto e suas descobertas iniciais, serão discutidos neste artigo. Esta pesquisa piloto faz parte de um projeto mais amplo a ser desenvolvido junto às IES de uma cidade e sua microrregião, localizados no interior do Estado de São Paulo.
+
+## 2.Procedimentos Metodológicos
+A pesquisa exploratória foi realizada utilizando-se de uma comunidade acadêmica composta por IES selecionada ao acaso e por oportunidade. A amostra utilizada foi formada por indivíduos também escolhidos  por acessibilidade, e foi constituída por 48 respondentes obtidos junto a alunos do segundo semestre de 2017 da UNESP, Campus de Bauru, além de alguns professores do mesmo campus.
+
+Este estudo piloto representa um teste, em pequena escala, dos procedimentos, materiais e métodos propostos para uma pesquisa mais abrangente que deverá ser realizada em 2018. Dessa forma, este piloto representou uma pequena versão do estudo completo o qual, conforme definem BAILER, TOMITCH e D’ELY (2011), envolveu todos os procedimentos previstos na metodologia proposta de modo a possibilitar alteração e aprimoramento do instrumento (questionário) na fase que antecedeu a investigação em si. 
+
+### 2.1. Características do questionário e processo de coleta de dados
+Nesta versão da pesquisa piloto, o instrumento de coleta de dados utilizado foi um questionário com perguntas respondidas por escrito. A maior parte das questões do questionário é fechada e de múltipla escolha, com um pequeno número de questões de natureza aberta, onde o indivíduo pôde responder livremente, usando linguagem própria e emitir opiniões. A combinação de respostas múltiplas com respostas abertas permite, segundo MARCONI e LAKATOS (2007), extração de mais informações sobre o determinado tópico, sem contudo prejudicar a sua tabulação.
+
+O questionário foi projetado para coletar informações do público alvo com relação a forma como os inquiridos utilizavam no momento da pesquisa as redes sociais e suas possíveis intenções de uso futuro. A opinião dos respondentes sobre um possível uso das mídias sociais no ensino também foi perscrutada.
+
+Desta forma, o questionário foi elaborado com duas seções: 
+
+- Características sócio demográficas dos participantes; e 
+- Opiniões relativas às mídias sociais relativas a utilidade percebida, facilidade e propósito de uso, e uso atual.
+
+A segunda seção do questionário buscou descobrir, através de suas subseções, quais são, na opinião dos pesquisados, os principais fatores devem ser considerados à respeito das mídias sociais e sua possibilidade de uso na educação superior.
+
+### 2.2. Análise Exploratória de Dados
+Análise Exploratória de Dados (AED) é uma técnica de análise de dados lançada por TUKEY (1977) visando encorajar estatísticos a explorar os dados e, possivelmente, formular hipóteses que possam levar a novos levantamentos de dados e experiências. Portanto, a finalidade da AED é de trabalhar com os dados buscando examiná-los previamente à aplicação de qualquer técnica estatística. Desta forma se obtém um entendimento básico das relações existentes entre as variáveis analisadas.
+
+De acordo com REIS e LINO (2017), a AED consiste em  resumir e organizar os dados coletados através de tabelas, gráficos  ou medidas numéricas, e, à partir dos dados resumidos, procurar  alguma  regularidade ou padrão nas observações (interpretar os dados). A partir dessa interpretação inicial é possível identificar se os dados seguem algum modelo conhecido, que permita estudar o fenômeno sob análise, ou se é necessário sugerir um novo modelo. 
+
+Nas diretrizes propostas por TUKEY (1977), deve-se iniciar a AED examinando os dados disponíveis, depois decidir sobre qual técnica aplicar para equacionar o problema e, por fim, procurar a equação (ou modelo) que melhor o represente e intérprete.
+
+### 2.3. Ambiente de Programação R
+Dentre os vários ambientes que oferecem a possibilidade para a AED, a plataforma R vem se tornando, de forma crescente, um padrão de fato, afirma ALBINO (2016). É uma solução open source (de código aberto) para análise de dados apoiada por uma comunidade de pesquisa grande e ativa em todo o mundo. A plataforma R é uma parte oficial do projeto GNU da Free Software Foundation e da Fundação R e tem objetivos semelhantes aos outros fundamentos de software de código aberta, tais como a Fundação Apache ou a Fundação GNOME. 
+
+O R oferece um ambiente de trabalho para a realização de análises e estatística de dados, além de permitir a visualização por meio de gráficos. Por ser um ambiente aberto e gratuito, possui um "ecossistema" com inúmeros "pacotes" disponíveis em repositórios que podem ser carregados durante a execução do programa, além de permitir que novos pacotes sejam criados pelo próprio usuário para o uso eficiente desse ambiente de trabalho. (ALBINO, 2016).
+
+Este relatório mostra a tabulação dos dados do estudo piloto e a análise exploratória de dados realizada, utilizando-se da linguagem R como ferramenta em todo o processo, inclusive na redação e edição do texto deste trabalho.
+
+## 3.Aplicação do Processo de Ciência de Dados
+De acordo com ALBINO (2016), ciência de dados é um campo interdisciplinar sobre processos e sistemas utilizados para extrair conhecimento ou "insights" de dados estruturados ou não estruturados.
+
+A primeira etapa no processo é definir exatamente qual é o problema que se busca resolver. Portanto, afirmam SCHUTT e O´NEIL, (2014), é preciso ser capaz de traduzir as questões sobre os dados em algo prático. 
+
+Especificamente, no caso desta pesquisa piloto, pretende-se obter quais fatores facilitam ou dificultam o uso das mídias sociais pelas IES.
+
+Após a definição clara do problema, é preciso obter os dados necessários para construir os conhecimentos e transformar o problema em uma solução. No caso específico, os “dados brutos” originais dos 48 questionários aplicados foram digitados em uma planilha Excel e carregados no ambiente R para posterior processamento dentro da ferramenta. 
+
+O trecho do código fonte em R para a carga do arquivo no ambiente da linguagem é mostrado no trecho de linhas de código (denominados snippets).
+
+```{r le_planilha, fig.caption="Snipset de carga dos dados.", echo=T}
+# Lendo a planilha para carregar no R.
+# A opção "sheetName = "dados"" é o nome da área de trabalho que será lida
+# de dentro da planilha de nome survey_testev2.xlsx.
+fd = "D:/Transferência/Pesquisa Reprodutível/data/survey_testev2.xlsx"
+df <- read_excel(fd, sheet = "dados")
+```
+Após a carga dos dados brutos é preciso avaliar sua integridade antes de qualquer análise. (ALBINO, 2016). Muitas vezes, os dados podem estar bastante confusos, especialmente se não foram coletados e armazenados com cuidado, contendo erros que poderão comprometer a investigação, tais como: 
+
+(a) valores definidos como nulos embora sejam realmente zero; 
+(b) valores duplicados; e 
+(c) valores ausentes (*missing values*).
+
+Os dados devem ser processados, após a sua carga, para torná-los "limpos" e preparados para a AED. Esta segunda etapa, dentro do processo de ciência de dados, é denominada "limpeza dos dados", que consiste no processo de transformar e mapear os dados originais (dados "crus") para um formato mais adequado. (ALBINO, 2016)
+
+Para analisar e verificar a validade dos dados, foi elaborado um pequeno trecho de código fonte (uma função, no ambiente R) para retirar os valores com "NA", ou seja, campos em branco ou que não foram declarados no questionário e, consequentemente, na planilha Excel original "bruta".
+
+```{r funcao_na, fig.caption="Função para verificar NAs.", echo=TRUE}
+## Função criada para verificar se existe NA ou NaN nos campos
+pct.res <- function (data.frame, i.position, n.column, out.labels) {
+  pct = n.labels = c()
+  n = 1
+  for (i in  1:n.column) {
+    if(sum(data.frame[i+i.position]) > 0) {
+      pct[n] <- round(sum(data.frame[i+i.position])/nrow(data.frame)*100,1)
+      n.labels[n] <- out.labels[i]
+      n = n + 1} 
+ }
+    names(pct) <- n.labels
+    return(pct)
+}
+```
+
+NA", em R, significa "Not Available", o que em outros pacotes de software estatístico, tais como SPSS® ou SAAS®, significa "Missing Values" (valores ausentes). "Valores ausentes" indicam que nenhum conteúdo está armazenado na variável da observação, porém são considerados presentes, mas devem ser excluídos dos cálculos e análises.
+
+No caso deste teste piloto os campos ausentes foram preenchidos com "0" (zero) para facilitar a aplicacção das técnicas estatísticas utilizadas.
+
+Após esta etapa, com os dados já preparados, o terceiro passo, de acordo com ALBINO (2016), é a realização da AED.
+
+### 3.1. Dados Censitários
+Nesta pesquisa piloto, foram coletados dados para a constituição do corpus de análise para uma visão do perfil dos respondentes. Nas Figuras numeradas de 3 a 9, serão apresentados os **dados censitários** obtidos na amostra.
+
+```{r perfil, echo=FALSE}
+# Número de respondentes
+pesquisados <- nrow(df) # Sem o cabeçalho
+# Sexo dos respondentes
+sexo=table(df$genero)
+pct.s <- round(sexo/sum(sexo)*100, digits=1)
+```
+Neste teste piloto, `r pesquisados` pessoas participaram.
+
+Como se pode obervar na Figura 1, do total de respondentes, `r pct.s[1]`% é do sexo masculino e `r pct.s[2]`% é do sexo feminino.
+
+```{r genero, fig.align="center", fig.cap="Gênero dos respondentes.", echo=FALSE}
+lbls <- c("Masculino", "Feminino")
+lbls <- paste(lbls, pct.s, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+pie(sexo, labels = lbls, edges = 100, angle = 45, col = c("gray","blue","purple"))
+```
+
+
+```{r calcula_a_idade, echo=FALSE}
+# Idade dos respondentes
+pct.i <- round(table(df$idade)/sum(table(df$idade))*100, digits=1)
+```
+
+Quanto à faixa etária, a maioria dos pesquisados, `r pct.i[5]`%, tem mais de 40 anos. A faixa entre 26 a 30 anos e entre 36 e 40 anos representaram `r pct.i[4]`%.
+
+Pode-se observar que os respondentes pertencem a uma faixa de idade mais 'madura'. A faixa etária dos respondentes está representada na Figura 2.
+
+```{r idade, fig.align="center", fig.cap="Faixa etária dos respondentes.", echo=FALSE}
+lbls <- c("21/25 anos", "26/30 anos","30/35 anos", "36/40 anos","+40 anos")
+barplot(table(df$idade), names.arg = lbls, col = c("gray", "red","gray", "green3", "gray", "red"),
+        xlab = "Idade dos respondentes", ylim = c(0,max(table(df$idade) + 5)), ylab = "Num. de Respondentes")
+``` 
+
+```{r calcula_profissao, echo= F}
+# Profissão
+pct.p <- round(table(df$profal)/sum(table(df$profal))*100, digits=1)
+```
+
+Com relação à profissão, `r pct.p[3]`% neste teste piloto são professores e alunos ao mesmo tempo. `r pct.p[2]`% são somente alunos e `r pct.p[1]`% são exclusivamente professores. A representação gráfica das respostas está na Figura 3.
+
+```{r profissao, fig.align="center", fig.cap="Profissão dos respondentes.", echo = F}
+lbls <- c("Professor","Aluno","Professor/aluno")
+lbls=paste0(pct.p, "%"," ",lbls)
+barplot(table(df$profal), names.arg = lbls, 
+        col = c("gray", "red","gray", "green3", "gray", "red"),
+        xlab = "Profissão e percentual", 
+        ylim = c(0,max(table(df$profal) + 3)), 
+        ylab = "Num. de Respondentes")
+```
+
+```{r calcula situacao_trabalhista, echo=F}
+#Situação Trabalhista
+situacao = table(df$trabalha)
+pct.t <- round(situacao/sum(situacao)*100, digits=1)
+```
+
+Quanto a situação trabalhista, a maioria (`r pct.t[3]`%) dos participantes deste piloto estão empregados e trabalham em tempo integral, como pode ser visto na Figura 4.
+
+```{r situacao, fig.align="center", fig.cap="Situação trabalhista.", echo=F}
+lbls <- c("Desempregado", "Parcial", "Integral",
+          "Conta própria", "Aposentado")
+lbls <- paste(lbls, pct.t, "%", sep=" ") # adicionar o símbolo % (porcentagem) aos rótulos
+pie(situacao, labels = lbls, edges = 230, radius = 1.09,
+    clockwise = F,  angle = 80, col = c("gray", "green3","blue", " yellow",'red'))
+``` 
+
+No Brasil, segundo ABDALA (2017), a taxa de desemprego ficou em 12,6% no trimestre encerrado em agosto de 2017. Os dados são da Pesquisa Nacional por Amostra de Domicílios (Pnad) Contínua. 
+
+Na amostra coletada para este piloto, a taxa de desempregados foi de `r pct.t[1]`%, menor que a taxa nacional computada pelo IBGE. Outras situações de trabalho da amostra podem ser observadas na Figura 4.
+
+```{r calc_estado_civil, echo=FALSE} 
+# Estado Civil
+marital = table(df$estadocivil)
+pct.m <- round(marital/sum(marital)*100, digits=1)
+```
+
+Por compreender uma amostra da população acadêmica mais madura, como pôde ser observado no gráfico da Figura 2, um número considerável dos respondentes da amostra (`r I(pct.m[2]+pct.m[3])`%) são casados e em união estável. Entretanto, `r pct.m[1]`% (a maioria dos respondentes da amostra), são solteiros. 
+
+Tais dados podem ser observados no gráfico da Figura 5, a qual representa a situação matrimonial dos respondentes.
+
+```{r marital, fig.align="center", fig.cap="Estado civil.", echo=F}
+lbls <- c("Solteiro", "Casado", "União Estável","Separado")
+lbls <- paste(lbls, pct.m, "%",sep=" ") # adicionar o símbolo % (porcentagem) aos rótulos 
+pie(marital, labels = lbls, edges = 200, radius = 0.9,
+    clockwise = F, angle = 30, col = c("green3","purple","red", "black", "blue", "black"))
+```
+
+```{r quantidade_filhos_calc, echo=F}
+# Quantidade de filhos
+filhos = table(df$filhos)
+pct.f <- round(filhos/sum(filhos)*100, digits=1)
+```
+
+Portanto, pode se inferir que, como a maioria das pessoas pesquisadas deste grupo (`r pct.m[1]`%) são solteiras, grande parte das mesmas (`r pct.f[1]`) não possuem filhos. 
+
+Nos dados apresentados na última pesquisa realizada pelo IBGE, as mulheres do Brasil têm em média 1,74 filhos, afirma LISBOA (2015). De acordo com o mesmo autor, as mulheres que respondem pela maior parte da fecundidade no país têm entre 20 e 24 anos, com 26,5% do total da fecundidade geral, apontam os números da Pesquisa Nacional por Amostra de Domicílios (Pnad).
+
+Em consonância com tais dados do Pnad/IBGE de 2014, na pesquisa piloto realizada neste estudo, observa-se que `r pct.f[2]`% têm um filho e `r pct.f[3]`% possuem dois filhos, taxa próxima aos 1,74% de filhos em média no Brasil. Um pequeno número de respondentes (`r pct.f[4]+pct.f[5]`% ) possui três filhos ou mais (porcentagem somada das faixas). 
+
+A Figura 6 mostra a representação gráfica do número de filhos da amostra.
+
+```{r filhos, fig.align="center", fig.cap="Número de filhos.", echo=F}
+# Quantidade de filhos
+lbls <- c("Sem filhos", "Um", "Dois", "Três", "+de Três")
+lbls <- paste(lbls, pct.f,"%", sep=" ")  # adicionar o símbolo % (porcentagem) aos rótulos 
+pie(filhos, labels = lbls, edges = 200, radius = 0.9,
+    clockwise = F, angle = 30, 
+    col = c("red", "green3","cyan", "black", "blue", "red"))
+```
+
+```{r calcula_idade_dos_filhos, echo=F}
+# Idade dos filhos
+idadefilhos = table(df$idadefilho)
+pct.if <- round(idadefilhos/sum(idadefilhos)*100, digits=1)
+```
+
+Com relação à idade dos filhos, a compilação dos dados deste teste piloto mostrou que a faixa etária dos filhos de 0 a 6 anos representa `r pct.if[2]`%, em consonância com a faixa etária dos respondentes até 35 anos da Figura 3, e que, similarmente, a faixa etária dos filhos com 20 anos ou mais de `r pct.if[5]`%, está em consonância com a faixa etária dos respondentes que têm mais de 40 anos.
+
+A compilação da faixa etária dos filhos pode ser observada no gráfico da Figura 7.
+
+```{r idade-filhos, fig.align="center",fig.cap="Faixa etária dos filhos.", echo=FALSE}
+lbls <- c("Sem filhos", "de 0 a 6", "de 7 a 15", "de 16 a 20", "+de 20", 
+          "de 0 a 6 e 7 a 15","7/15 e 20","16/20 e +20")
+barplot(idadefilhos, 
+#        names.arg = lbls, 
+        legend =  paste0(pct.if,"%"," - ", lbls),
+        col = c("gray", "red","black", "green3", "gray", "red","black", "green3"),
+        xlab = "Faixas de idade dos filhos", 
+        ylim = c(0,max(idadefilhos) + 3), 
+        ylab = "Num. de Respondentes")
+```
+
+### 3.2. Plataformas sociais utilizadas
+Neste tópico do relatório, serão visualizadas as respostas referentes à segunda seção do questionário, onde foram coletadas opiniões relativas à utilidade, facilidade, propósito de uso e o uso real que os respondentes têm com relação às mídias sociais.
+
+Através das suas subseções, serão visualizados gráficos representando as considerações dos investigadoss sobre questionamentos relativos às plataformas de redes sociais mais utilizadas pelo grupo.
+
+Originalmente, dezesseis (16) plataformas foram relacionadas no questionário, buscando oferecer uma ampla gama de opções ao respondente, contendo as mídias sociais mais citadas. Após pesquisas adicionais, no questionário foram relacionadas apenas nove (9) plataformas, consideradas as mais utilizadas no Brasil. Para tanto, foram utilizados os dados fornecidos pelo portal STATISTA (2017). Apesar de ser uma questão com opções _fechadas_, o respondente ainda tinha a opção de sugerir outras plataformas, as quais utilizasse, e que não estavam originalmente relacionadas na questão.
+
+As plataformas de maior uso foram compiladas no gráfico da Figura 8.
+
+```{r plataformas, fig.align="center", fig.cap="Plataformas Utilizadas.", echo=F}
+# Nomes das plataformas no survey
+lbls = c("Facebook","Twitter","Whatsapp","Linkedin",
+         "Youtube","Instagram", "Pinterest","Tumblr",
+         "Snapchat")
+pct.pla <- pct.res(df, 7, 9, lbls) # " chamada" da função para compilar as plataformas
+barplot(unname(pct.pla), 
+        legend.text = names(pct.pla),
+        names.arg = paste0(pct.pla,"%"),
+        col = c("gray", "red","gray", "green3", "gray", "red"),
+        xlab = "Plataformas mais utilizadas",
+        ylab = "Num. de Respondentes",
+        ylim = c(0,max(unname(pct.pla)) + 3))
+```
+
+Das nove (9) plataformas relacionadas no questionário, com opção de múltipla escolha, observa-se que as mais utilizadas pelos respondentes da amostra são, pela ordem: 
+
+1. **WhatsApp®, com `r pct.pla[3]`%;**
+2. **Facebook®, com `r pct.pla[1]`%;**
+3. **Youtube®, com `r pct.pla[5]`%;** e 
+4. **LinkedIn®, com `r pct.pla[4]`%.**
+
+A plataforma _Instagram®_ também obteve pontuação, correspondente a `r pct.pla[6]`% das respostas, assim como a plataforma _Tweeter®_ com `r pct.pla[2]`%, porém classificadas distantes da 4ª plataforma mais utilizada, LinkedIn®, com `r pct.pla[4]`%. 
+
+As demais plataformas (Pinterest® e Snapchat®) obtiveram percentuais menores. A plataforma Tumblr® não apresentou pontuações nesta amostra.
+
+Através de uma pergunta com opção _aberta_ a pesquisa ofereceu a oportunidade para que os respondentes elencassem outras plataformas não atendidas na questão fechada. A mais citada pelos participantes foi a plataforma Google Plus®.
+
+### 3.3 Tipificação no uso das Plataformas Sociais
+Na terceira seção do questionário, solicitou-se aos respondentes que caracterizassem o seu tipo de uso das mídias sociais. 
+
+Uma grande quantidade da população mundial utiliza _mídias sociais_ hoje em dia, afirma DESMERAUX (2015). A questão não é mais **se** as utilizamos, mas **qual o motivo** pelas quais as utilizamos, afirma o autor. Foi buscando responder a esta e ouras questões a respeito das redes sociais que a [Global Web Index](https://www.globalwebindex.com/) realiza anualmente estudos no que a organização define como **consumidor digital**. 
+
+Baseado nos resultados publicados pela [Global Web Index](https://www.globalwebindex.com/), DESMERAUX (2015) afirma que, aparentemente, a maioria das pessoas utiliza as mídias sociais para: _manter contato com outras pessoas_; _se manter atualizado sobre o que acontece no mundo que os rodeia_; _preencher o seu tempo livre_; e _encontrar conteúdo interessaste_.
+
+Sendo assim, visando descobrir quais os motivos que levam as pessoas a utilizar as mídias sociais, e seu possível uso no contexto das IES, esta subseção do questionário contém um conjunto de perguntas a este respeito. 
+
+Portanto, nesta etapa deste relatório, serão visualizados gráficos mostrando as respostas referentes às motivações para o real uso das redes sociais neste grupo de pessoas. 
+
+```{r calculamotivo, echo=F }
+lbls = c("Saber o que amigos fazem",
+         "Manter-se atualizado",
+         "Preencher tempo",
+         "Encontrar conteúdo",
+         "Compartilhar opinião",
+         "Compartilhar fotos",
+         "Os amigos já usam",
+         "Networking profissional",
+         "Conhecer novas pessoas",
+         "Assuntos de trabalho")
+pct.motivo <- pct.res(df, 17, 10, lbls)
+```
+
+A primeira questão desta sub seção procurou compreender quais os principais motivos para os respondentes utilizarem-se das redes sociais.
+
+Como mostra a Figura 9, o principal motivo apontado pelos participantes desta amostra foram, pela ordem:
+
+1. **Manter-se atualizado com `r pct.motivo[2]`%;**
+2. **Realizar Networking profissional com `r pct.motivo[8]`%;**
+3. **Saber o que amigos fazem e Encontrar conteúdo, ambos com `r pct.motivo[1]`%;** e
+4. **Tratar de Assuntos de trabalho com `r pct.motivo[10]`%.**
+
+```{r motivouso, fig.align="center", fig.cap="Motivos de uso.", echo=F}
+pie(pct.motivo, 
+    labels = paste(names(pct.motivo),pct.motivo,"%"),
+    edges = 200, radius = 1,
+    clockwise = F, angle = 30, 
+    col = c("purple", "green3", "black", "blue", "red", "yellow",
+            "mistyrose","lightcyan", "lavender"))
+```
+
+_Compartilhar opinião_ e _compartilhar fotos_ obtiveram, cada uma, _`r pct.motivo[5]`%_ das respostas e _conhecer novas pessoas_ apenas _`r pct.motivo[9]`%_. 
+
+Na _resposta aberta_, os participantes puderam manifestar outros motivos que os mesmos teriam para utilizar as plataformas sociais atualmente. As outras motivações citadas foram: (a) _utilização para marketing pessoal_, (b) _manter contato com amigos e familiares_, e (c) _motivo de trabalho_.
+
+De acordo com um relatório da agência [We Are Social](https://wearesocial.com/special-reports/digital-in-2017-global-overview) o Brasil é o terceiro país no ranking de quem passa mais tempo na Internet. Este estudo, sobre o uso de Internet e redes sociais no mundo em 2017, foi promovido pela agência _We Are Social_ e a plataforma _Hootsuite_ e levou em conta dados fornecidos por diferentes fontes.
+
+Segundo o relatório, os brasileiros gastam, em média, _9 horas navegando na web_. O país também aparece entre os primeiros em número de pessoas quando o assunto é _o tempo gasto nas redes sociais_: são _mais de 3 horas diárias_.
+
+Deve-se observar que, no Brasil, o número pessoas com acesso à Internet é de 139.1 milhões (66% da população), índice que não apresentou mudanças entre 2016 e 2017. No entanto, ainda assim, no mesmo período, houve um aumento de 7% dos usuários em redes sociais.
+
+Portanto, nos gráficos das figuras numeradas de 10 a 14, serão expostas as respostas da amostra referentes à seção do questionário de pesquisa que buscava caracterizar as apreciações dos respondentes sobre quanto tempo de uso real das mídias sociais que os participantes praticavam diariamente. 
+
+```{r tempo_de_uso, fig.align="center", fig.cap="Período de tempo dispendido nas redes sociais.", echo=F}
+pct.use.time <- round(table(df$tempogasto)/sum(table(df$tempogasto))*100, digits=1)
+lbls <- c("Nenhum/Não uso","11 a 30 min.", "31 min. a 1 h.",  
+          "1 a 2 hs","2 a 3 hs","3 a 4 hs","4 a 5 h")
+lbls <- paste(lbls, pct.use.time, "%",sep=" ") # add percents to labels
+pie(pct.use.time, labels = lbls, edges = 200, radius = 1,
+    clockwise = F, angle = 30, 
+    col = c("purple", "green3", "black", "blue", "red", "yellow",
+            "mistyrose","lightcyan", "lavender"))
+```
+
+Como pôde ser observado no gráfico da Figura 10, os respondentes gastam entre 31 minutos e 3 horas diariamente utilizando as plataformas sociais relacionadas no gráfico da Figura 8. As respostas obtidas estão em consonância com as obtidas no relatório da agência [We Are Social](https://wearesocial.com/special-reports/digital-in-2017-global-overview).
+
+Já o gráfico da Figura 11 exibe a opinião dos respondentes à respeito do uso da redes sociais como uma ferramenta que poderia ou deveria ser utilizada pelos professores em suas atividades didáticas nas disciplinas ministradas. 
+
+```{r uso_das_redes, fig.align="center", fig.cap="Uso das Midias Sociais no ensino superior",echo=FALSE}
+# Sobre o uso das redes sociais no ensino superior concorda/discorda/sem opinião
+#lbls <- c("Não","Sim", "Sim com restrições","Não sei/Sem opinião")
+pct.use.tool <- round(table(df$usoacademico)/sum(table(df$usoacademico))*100, digits=1)
+lbls <- c("Sim", "Sim com restrições")
+lbls <- paste(lbls, pct.use.tool, "%",sep=" ") # adicionar porcentagens aos rótulos
+pie(table(df$usoacademico), labels = lbls, edges = 200, radius = 0.9,
+    clockwise = T, angle = 30, 
+    col = c("purple", "green3", "black", "blue", "red", "yellow"))
+```
+
+Como pode ser observado no gráfico da Figura 11, um grande número de respondentes (`r unname(pct.use.tool[1])`%) concorda com o uso das redes sociais no ambiente acadêmico de nível superior, entretanto um número considerável de respondentes (`r unname(pct.use.tool[2])`%) aceita o uso, porém, com restrições.
+
+Outra questão verificada na pesquisa dizia respeito a se as ferramentas de midias sociais seriam a melhor forma dos professores universitários se aproximarem de seus alunos, já que a maioria deles utiliza dispositivos móveis e computadores de forma massiva. Seriam os nativos ou imigrantes digitais, de acordo com PRENSKY (2001).
+
+Na Figura 12 temos a respresentação gráfica das respostas da amostra pesquisada.
+
+```{r aproximacao, fig.align="center", fig.cap="Midias melhoram contato professor/aluno", echo=F}
+# Sobre se as midias sociais melhoram o contato entre professor-aluno
+pct.use.close <- round(table(df$profchegaal)/sum(table(df$profchegaal))*100, digits=1)
+lbls <- c("Não","Sim","Não sei/Sem opinião")
+lbls <- paste(lbls, pct.use.close, "%",sep=" ") # adicionar porcentagens aos rótulos)
+pie(table(df$profchegaal), labels = lbls, edges = 200, radius = 0.7,
+    clockwise = F, angle = 30, 
+    col = c("purple", "green3", "black", "blue", "red", "yellow",
+            "mistyrose","lightcyan", "lavender"))
+```
+
+Observa-se, pela Figura 12 que um grande número dos respondentes (`r pct.use.close[1]`%) não acredita que as mídias sociais melhorem o contato entre professor e aluno. Apenas `r pct.use.close[1]`% da amostra acreditam que as ferramentas sociais aproximem professores dos alunos.
+
+Outra questão indagada foi se, com o uso das mídias sociais, os alunos poderiam obter melhores resultados se tais aplicativos estivessem integrados às atividades acadêmicas de professores e alunos.
+
+A Figura 13 mostra a distribuição das respostas obtidas.
+
+```{r integracao_desempenho, fig.align="center", fig.cap="Midias melhoram rendimento escolar", echo=F}
+pct.use.res <- round(table(df$melhoraresul)/sum(table(df$melhoraresul))*100, digits=1)
+lbls <- c("Não","Sim","Não sei/Sem opinião")
+lbls <- paste(lbls, pct.use.res, "%",sep=" ") # add percents to labels
+pie(table(df$melhoraresul), labels = lbls, edges = 200, radius = 0.7,
+    clockwise = F,  angle = 30, 
+    col = c("purple", "green3", "black", "blue", "red", "yellow",
+            "mistyrose","lightcyan", "lavender"))
+```
+
+Na Figura 13, pode-se constatar que a questâo da integração dos aplicativos com o conteúdo das disciplinas podem melhorar os resultados dos alunos universitários, de acordo com `r pct.use.res[2]`% dos respondentes.
+
+As mídias sociais tornaram-se os principais meios de interação das gerações mais jovens com o mundo. Sem surpresa, as novas gerações também estão ativamente aplicando seu apego às redes sociais em suas vidas nas suas atividades didáticas nos níveis superiores de educação, usando diversos aplicativos para se informar sobre tudo, desde vestibulares, seleção de instituição de ensino para estudar e até as escolhas do curso, afirma RUSSELL (2017).
+
+Portanto, pode-se inferir que um dos maiores desafios enfrentados pelas instituições universitárias - particularmente aquelas com múltiplas faculdades operando seus próprios canais sociais - está em encontrar uma forma de agilizar eficientemente seus esforços sociais em todo o campus. (RUSSELL, 2017).
+
+Sendo assim, este trabalho buscou constatar quais seriam, na opinião dos pesquisados, as principais barreiras para o uso das plataformas selecionadas no ambiente educacional.
+
+Dentre as opções oferecidas no questionário, os respondentes selecionaram as principais dificuldades para o uso das mídias sociais no ambiente das IES, representadas pelo gráfico da Figura 14.
+
+```{r dificuldades, fig.align="center", fig.cap="Dificuldades no uso das plataformas digitais", echo=FALSE}
+# Principais dificuldades para o uso das plataformas: concorda/discorda/sem opinião
+lbls = c("Mais distração em sala",
+         "Cola, cópia, etc.",
+         "Prejudica interação",
+         "Favorece cyberbullying",
+         "Conteúdo inadequado")
+pct.dif <- pct.res(data.frame = df, i.position = 32, n.column = 5, out.labels = lbls)
+pie(unname(pct.dif), 
+    labels = paste(names(pct.dif),pct.dif,"%"), 
+    edges = 200, radius = 0.9,
+    clockwise = F, angle = 30,
+    col = c("purple", "green3", "black", "blue", "red"))
+```
+
+Das cinco (5) barreiras originalmente arroladas como _opções fechadas_ no questionário, o **principal obstáculo**, segundo a amostra pesquisada, com **`r pct.dif[1]`%**, é a questão do dispositivo móvel e/ou aplicativo **_representar mais uma fonte de distração na sala de aula_**. 
+
+O segundo obstáculo mais premente diz respeito à **_facilitação de envio de “cola” e/ou realização de cópia de trabalhos_**, dentre outros problemas de trapaça com **`r pct.dif[2]`%**. Em seguida, apontado como a terceira barreira para o uso das mídias sociais no ensino superior pelas IES é a possibilidade de _publicação de conteúdo inadequado_ (conteúdos de cunho sexual, violento, de apologia às drogas, _fake news_ ou que apresentam discurso de ódio, por exemplo) aparece nesta pesquisa com **`r pct.dif[5]`%**.
+
+Já a questão da _perda de interação humana entre colegas e professores_ desponta com `r pct.dif [3]`%. E, apesar do seu amplo espectro e impacto negativo, a questão do **cyberbulling** (violência praticada contra alguém, através da internet ou de outras tecnologias relacionadas ao mundo virtual com o objetivo de agredir, perseguir, ridicularizar e/ou assediar), nesta amostra, aparece com **`r pct.dif[4]`%**, apenas. 
+
+Outras dificuldades citadas no campo de _resposta aberta_ e que não estavam relacionadas originalmente no questionário foram: conexão ruim; falta de preparo dos professores e legislação estadual que proíbe o uso de celular dentro da sala de aula; múltiplos aplicativos podem diminuir a produtividade do aluno; perda de foco; e a carência de uma mediação pedagogicamente estruturada.
+
+## 4. Conclusões Preliminares 
+Rápida, dinâmica e em constante evolução, a era digital transformou a forma como as pessoas interagem entre si e se relacionam, mudando drasticamente o processo de comunicação de forma mais impactante do que qualquer era anterior, conclui RUSSEL (2017). 
+
+Por meio do uso de smartphones, tablets e outros aparelhos móveis, agora pode-se se "conectar" ao espaço virtual praticamente sempre que se desejar. E de forma extremamente comum nos dias atuais, há uma enorme quantidade de cerca de 2,5 bilhões de pessoas se conectando diariamente. (CHAWINGA, 2017).
+
+Sendo assim, um dos principais desafios para as IES atualmente é acompanhar a necessidade que a era digital e as novas gerações demandam. Nesse movimento, o perfil do ensino superior no País caminha para um novo formato. (BERNHEIM e CHAUÍ, 2008).
+
+A transformação digital é um processo que avança muito rápido, de acordo com o [Fórum Econômico Mundial]( https://news.un.org/pt/tags/forum-economico-mundial/date/2017). E embora 75 milhões de empregos que serão deslocados, 133 milhões de novas funções serão criadas, um dado para que o Ensino Superior esteja preparado.
+
+As grades curriculares das IES devem estar na vanguarda dessas mudanças, com um planejamento estratégico abrangente que atenda às demandas que a sociedade e os novos alunos precisarão. A tecnologia contribuirá para que a inovação seja uma constante. 
+
+Portanto, como mostraram os resultados desta análise exploratória inicial, é preciso começar a transformar o ensino superior de diferentes ângulos, e os desafios para as IES serão as prioridades dos alunos de uma geração altamente conectada, e ainda mais, utilizando no seu dia a dia tecnologias de ponta que, às vezes, ainda não são oferecidas no ambiente educacional destas IES.
+
+Embora os resultados apontados neste relatório não possam necessariamente serem tomados como uma tendência efetiva e não signifique uma revolução, o fenômeno das plataformas sociais já está mudando completamente a experiência dos alunos e professores, tanto em relação ao aprendizado quanto da forma como a comunidade acadêmica como um todo vivencia tal experiência nos câmpus.
+
+## Referências
+ABDALA, V. Taxa de desemprego fica em 12,6% no trimestre encerrado em agosto, EBC Agência Brasil, 29/09/2017. Disponível em: http://agenciabrasil.ebc.com.br/economia/noticia/2017-09/taxa-de-desemprego-fica-em-126-em-agosto. Acesso em: 02/ nov. 2017.
+
+ALBINO, J. P., Uma Abordagem para Criação de Valor em Dados Abertos para Pequenas e Médias Empresas Utilizando o Ecossistema R, Anais do III Encontro Internacional Dados, Tecnologia e Informação: perspectivas e interdisciplinaridades em Ciência da Informação: 4 a 6 de outubro de 2016. pp. 808-825.
+
+BAILER, C.; TOMITCH, L. M. B.; D’ELY, R. C. S. Planejamento como processo dinâmico: a importância do estudo piloto para uma pesquisa experimental em linguística aplicada. Revista Intercâmbio, v. XXIV: 129-146, 2011. 
+
+BERNHEIM, C. T.; CHAUÍ, M. S., Desafios da universidade na sociedade do conhecimento: cinco anos depois da conferência mundial sobre educação superior, UNESCO, Brasília, 2008.
+
+CHAWINGA, W. D. Taking social media to a university classroom: teaching and learning using Twitter and blogs. International Journal of Educational Technology in Higher Education, Springer Open, Num. 14, Vol. 3, 2017.
+
+GUBERT, R. L.; MACHADO, M. F. R. C., A Prática Docente e o Novo Paradigma Educacional Virtual, Anais do IX EDUCERE, PUCPR. 26 a 29 de Outubro de 2009. Disponível em: http://educere.bruc.com.br/arquivo/pdf2009/3418_1822.pdf. Acesso em: 28 nov. 2017.
+
+LISBOA, V. Mulheres brasileiras têm menos de dois filhos em média, EBC - Agência Brasil, 04/12/2015. Disponível em http://agenciabrasil.ebc.com.br/geral/noticia/2015-12/mulheres-brasileiras-tem-menos-de-dois-filhos-em-media. Acesso em: 01 nov. 2017. 
+
+MARCONI, Marina de Andrade; LAKATOS, Eva Maria. Metodologia cientifica: ciência e conhecimento científico, métodos científicos, teoria, hipóteses e variáveis. 5. ed. São Paulo: Atlas, 2007.
+
+PRENSKY, M. Digital Natives, Digital Immigrants Part 1", On the Horizon, Vol. 9 No. 5, pp. 1-6. Disponível em: https://doi.org/10.1108/10748120110424816. Accesso em: 01 nov. 2017.
+
+REIS, M. M.; LINO, M. O. INE 7001 Estatística para Administradores I: Notas de Aula. Disponível em: http://www.inf.ufsc.br/~marcelo.menezes.reis/Caps1_e_2.pdf. Acesso em: 28 out. 2017.
+
+RUSSELL, J. Social Media in Higher Education: Strategies, Benefits, and Challenges, Blog Hootsuite,Hootsuite Inc. Disponível em: https://blog.hootsuite.com/social-media-in-higher-education/. Acesso em: 03 nov. 2017. 
+
+SCHUTT, R.; O'NEIL, C. Doing Data Science: Straight Talk from the Frontline, O'Reilly Media, Sebastopol, CA, USA, 2014.
+
+STATISTA, Brazil: social network penetration as of Q4 2016. Disponível em: https://www.statista.com/statistics/284424/brazil-social-network-penetration/. Acesso em: 02 nov. 2017.
+
+TUKEY, J. W. Exploratory Data Analysis, 1st Edition, USA, Pearson Behavioral Science, 1977.

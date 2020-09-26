@@ -1,0 +1,3 @@
+"0","lbls <- c(""Masculino"", ""Feminino"")"
+"0","lbls <- paste(lbls, pct.s, ""%"", sep="" "") # adicionar % (porcentagem) aos rótulos"
+"0","pie(sexo, labels = lbls, edges = 100, angle = 45, col = c(""gray"",""blue"",""purple""))"

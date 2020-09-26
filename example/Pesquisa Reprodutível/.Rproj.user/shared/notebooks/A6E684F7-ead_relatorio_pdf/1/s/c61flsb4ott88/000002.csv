@@ -1,0 +1,5 @@
+"0","# Lendo a planilha para carregar no R."
+"0","# A opção ""sheetName = ""dados"""" é o nome da área de trabalho que será lida"
+"0","# de dentro da planilha de nome survey_testev2.xlsx."
+"0","fd = ""D:/Transferência/Pesquisa Reprodutível/data/survey_testev2.xlsx"""
+"0","df <- read_excel(fd, sheet = ""dados"")"

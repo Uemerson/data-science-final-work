@@ -1,0 +1,2 @@
+"0","# Profissão"
+"0","pct.p <- round(table(df$profal)/sum(table(df$profal))*100, digits=1)"

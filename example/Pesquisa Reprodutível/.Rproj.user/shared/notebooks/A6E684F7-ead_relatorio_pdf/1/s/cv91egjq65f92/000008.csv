@@ -1,0 +1,3 @@
+"0","lbls <- c(""21/25 anos"", ""26/30 anos"",""30/35 anos"", ""36/40 anos"",""+40 anos"")"
+"0","barplot(table(df$idade), names.arg = lbls, col = c(""gray"", ""red"",""gray"", ""green3"", ""gray"", ""red""),"
+"0","        xlab = ""Idade dos respondentes"", ylim = c(0,max(table(df$idade) + 5)), ylab = ""Num. de Respondentes"")"

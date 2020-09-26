@@ -1,0 +1,2 @@
+"0","# Idade dos respondentes"
+"0","pct.i <- round(table(df$idade)/sum(table(df$idade))*100, digits=1)"

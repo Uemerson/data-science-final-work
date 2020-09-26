@@ -1,0 +1,5 @@
+"0","# Número de respondentes"
+"0","pesquisados <- nrow(df) # Sem o cabeçalho"
+"0","# Sexo dos respondentes"
+"0","sexo=table(df$genero)"
+"0","pct.s <- round(sexo/sum(sexo)*100, digits=1)"
