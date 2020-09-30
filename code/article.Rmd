@@ -1,6 +1,11 @@
 ---
 title: "Impacto do COVID-19 no segmento de academia de Bauru"
-author: "Alexandre Cruz Nicolas, Carina Nascimento, Danielli Santos da Silva, Emerson Carlos Sarti Ferrasi, Uemerson Pinheiro Junior"
+author: 
+- Alexandre Cruz Nicolas 
+- Carina Nascimento 
+- Danielli Santos da Silva 
+- Emerson Carlos Sarti Ferrasi 
+- Uemerson Pinheiro Junior
 date: '2020'
 abstract: Adicionar o resumo do artigo aqui.
 tags: COVID-19
@@ -19,6 +24,24 @@ output:
 header-includes:
    - \usepackage{indentfirst}
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width = "70%", lang="pt-BR", dpi=100)
+
+if (!require(knitr)) install.packages('knitr')
+
+if (!require(rmarkdown)) install.packages('rmarkdown')
+local({r = getOption("repos")
+       r["CRAN"] = "https://brieger.esalq.usp.br/CRAN/" 
+       options(repos=r)
+})
+
+rm(list = ls())
+dev.set(1)
+
+if (!require(tidyverse)) install.packages("tidyverse")
+library("readxl")
+``` 
 
 \setlength{\parindent}{0.5cm}
 
@@ -129,6 +152,467 @@ Ressalta-se que a construção do questionário deve contemplar os objetivos pre
 Optou-se pela construção de um formulário de pesquisa online disponível pela ferramenta google forms. A escolha deste instrumento deu-se em função da praticidade na coleta dos dados, bem como na boa aceitação que esta modalidade de questionário tem na sociedade, principalmente por ser de fácil acesso e rapidez. 
 
 ### 6.4 Análise dos dados
+
+```{r echo=FALSE}
+data = read_excel("../data/survey-responses.xlsx", sheet = "responses")
+
+pesquisados = nrow(data) # Sem o cabeçalho
+
+resposta_questao1 = c(sum(data$questao1 == "Sim"), sum(data$questao1 == "Não"))
+resposta_questao2 = c(sum(data$questao2 == "Sim"), sum(data$questao2 == "Não"))
+resposta_questao3 = c(sum(data$questao3 == "Sim"), sum(data$questao3 == "Não"))
+
+trim = function (x) gsub("^\\s+|\\s+$", "", x)
+
+count_word_split_by = function (data, word, split_by){
+  count = 0
+  words = strsplit(data, split_by)
+  
+  for (values in words){
+    for(value in values){
+      if (trim(value) == word){
+        count = count + 1
+      }
+    }
+  }
+  
+  return (count)
+}
+
+resposta_questao4.1 = 
+  c(
+    count_word_split_by(data$questao4.1, "Homem cisgênero", ","), 
+    count_word_split_by(data$questao4.1, "Mulher cisgênero", ","), 
+    count_word_split_by(data$questao4.1, "Homem transexual", ","), 
+    count_word_split_by(data$questao4.1, "Mulher transexual", ","))
+
+resposta_questao4.2 = 
+  c(
+    sum(data$questao4.2 == "18 – 30 anos"), 
+    sum(data$questao4.2 == "31 – 40 anos"),
+    sum(data$questao4.2 == "41 – 50 anos"),
+    sum(data$questao4.2 == "51 – 60 anos"),
+    sum(data$questao4.2 == "Mais de 61 anos"))
+
+resposta_questao4.3 = 
+  c(
+    sum(data$questao4.3 == "1 vez por semana"), 
+    sum(data$questao4.3 == "2 vez por semana"),
+    sum(data$questao4.3 == "3 vez por semana"),
+    sum(data$questao4.3 == "4 vez por semana"),
+    sum(data$questao4.3 == "Mais de 5 vezes por semana"))
+
+resposta_questao5 = 
+  c(
+    sum(data$questao5 =="Zona Norte da cidade"), 
+    sum(data$questao5 =="Zona Oeste da cidade"), 
+    sum(data$questao5 =="Zona Sul da cidade"), 
+    sum(data$questao5 =="Zona Leste da cidade"))
+
+resposta_questao6 = 
+  c(
+     sum(data$questao6 == "Até 100 alunos"), 
+     sum(data$questao6 == "De 101 a 200 alunos"), 
+     sum(data$questao6 == "De 201 a 300 alunos"), 
+     sum(data$questao6 == "De 301 a 400 alunos"), 
+     sum(data$questao6 == "Mais de 400 alunos"))
+
+resposta_questao7 = c(sum(data$questao7 == "Sim"), sum(data$questao7 == "Não"))
+resposta_questao8 = c(sum(data$questao8 == "Sim"), sum(data$questao8 == "Não"))
+resposta_questao9 = c(sum(data$questao9 == "Sim"), sum(data$questao9 == "Não"))
+resposta_questao10 = c(sum(data$questao10 == "Sim"), sum(data$questao10 == "Não"))
+resposta_questao11 = c(sum(data$questao11 == "Sim"), sum(data$questao11 == "Não"))
+resposta_questao12 = c(sum(data$questao12 == "Sim"), sum(data$questao12 == "Não"))
+resposta_questao13 = c(sum(data$questao13 == "Sim"), sum(data$questao13 == "Não"))
+
+resposta_questao14 = 
+  c(
+    sum(data$questao14 == "De 5% a 15% do número total de alunos"), 
+    sum(data$questao14 == "De 16% a 25% do número total de alunos"), 
+    sum(data$questao14 == "26% do 35% do número total de alunos"), 
+    sum(data$questao14 == "De 36% a 45% do número total de alunos"), 
+    sum(data$questao14 == "Mais de 50% do número total de alunos"))
+
+resposta_questao15 = c(sum(data$questao15 == "Sim"), sum(data$questao15 == "Não"))
+
+resposta_questao16 =
+  c(
+    sum(data$questao16 == "Encerramento oficial das atividades"), 
+    sum(data$questao16 == "Explorar outras alternativas de serviços (reinvenção do negócio)"),
+    sum(data$questao16 == "Obter financiamento governamental"), 
+    sum(data$questao16 == "Obter um “investidor anjo”"))
+```
+
+Nessa pesquisa, `r pesquisados` pessoas participaram.
+
+
+### 6.4 Análise dos dados
+
+```{r echo=FALSE}
+data = read_excel("../data/survey-responses.xlsx", sheet = "responses")
+
+pesquisados = nrow(data) # Sem o cabeçalho
+
+resposta_questao1 = c(sum(data$questao1 == "Sim"), sum(data$questao1 == "Não"))
+resposta_questao2 = c(sum(data$questao2 == "Sim"), sum(data$questao2 == "Não"))
+resposta_questao3 = c(sum(data$questao3 == "Sim"), sum(data$questao3 == "Não"))
+
+trim = function (x) gsub("^\\s+|\\s+$", "", x)
+
+count_word_split_by = function (data, word, split_by){
+  count = 0
+  words = strsplit(data, split_by)
+  
+  for (values in words){
+    for(value in values){
+      if (trim(value) == word){
+        count = count + 1
+      }
+    }
+  }
+  
+  return (count)
+}
+
+resposta_questao4.1 = 
+  c(
+    count_word_split_by(data$questao4.1, "Homem cisgênero", ","), 
+    count_word_split_by(data$questao4.1, "Mulher cisgênero", ","), 
+    count_word_split_by(data$questao4.1, "Homem transexual", ","), 
+    count_word_split_by(data$questao4.1, "Mulher transexual", ","))
+
+resposta_questao4.2 = 
+  c(
+    sum(data$questao4.2 == "18 – 30 anos"), 
+    sum(data$questao4.2 == "31 – 40 anos"),
+    sum(data$questao4.2 == "41 – 50 anos"),
+    sum(data$questao4.2 == "51 – 60 anos"),
+    sum(data$questao4.2 == "Mais de 61 anos"))
+
+resposta_questao4.3 = 
+  c(
+    sum(data$questao4.3 == "1 vez por semana"), 
+    sum(data$questao4.3 == "2 vez por semana"),
+    sum(data$questao4.3 == "3 vez por semana"),
+    sum(data$questao4.3 == "4 vez por semana"),
+    sum(data$questao4.3 == "Mais de 5 vezes por semana"))
+
+resposta_questao5 = 
+  c(
+    sum(data$questao5 =="Zona Norte da cidade"), 
+    sum(data$questao5 =="Zona Oeste da cidade"), 
+    sum(data$questao5 =="Zona Sul da cidade"), 
+    sum(data$questao5 =="Zona Leste da cidade"))
+
+resposta_questao6 = 
+  c(
+     sum(data$questao6 == "Até 100 alunos"), 
+     sum(data$questao6 == "De 101 a 200 alunos"), 
+     sum(data$questao6 == "De 201 a 300 alunos"), 
+     sum(data$questao6 == "De 301 a 400 alunos"), 
+     sum(data$questao6 == "Mais de 400 alunos"))
+
+resposta_questao7 = c(sum(data$questao7 == "Sim"), sum(data$questao7 == "Não"))
+resposta_questao8 = c(sum(data$questao8 == "Sim"), sum(data$questao8 == "Não"))
+resposta_questao9 = c(sum(data$questao9 == "Sim"), sum(data$questao9 == "Não"))
+resposta_questao10 = c(sum(data$questao10 == "Sim"), sum(data$questao10 == "Não"))
+resposta_questao11 = c(sum(data$questao11 == "Sim"), sum(data$questao11 == "Não"))
+resposta_questao12 = c(sum(data$questao12 == "Sim"), sum(data$questao12 == "Não"))
+resposta_questao13 = c(sum(data$questao13 == "Sim"), sum(data$questao13 == "Não"))
+
+resposta_questao14 = 
+  c(
+    sum(data$questao14 == "De 5% a 15% do número total de alunos"), 
+    sum(data$questao14 == "De 16% a 25% do número total de alunos"), 
+    sum(data$questao14 == "26% do 35% do número total de alunos"), 
+    sum(data$questao14 == "De 36% a 45% do número total de alunos"), 
+    sum(data$questao14 == "Mais de 50% do número total de alunos"))
+
+resposta_questao15 = c(sum(data$questao15 == "Sim"), sum(data$questao15 == "Não"))
+
+resposta_questao16 =
+  c(
+    sum(data$questao16 == "Encerramento oficial das atividades"), 
+    sum(data$questao16 == "Explorar outras alternativas de serviços (reinvenção do negócio)"),
+    sum(data$questao16 == "Obter financiamento governamental"), 
+    sum(data$questao16 == "Obter um “investidor anjo”"))
+```
+
+Nessa pesquisa, `r pesquisados` pessoas participaram.
+
+1 - Você é empresário ou empresária do segmento de academia?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao1/sum(resposta_questao1)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao1, main="Respostas", col=gray.colors(length(resposta_questao1)),
+labels=lbls)
+```
+\end{center}
+  
+2 - A academia é seu único negócio?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao2/sum(resposta_questao2)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao2, main="Respostas", col=gray.colors(length(resposta_questao2)),
+labels=lbls)
+```
+\end{center}
+
+3 - Sua academia pertence à alguma franquia?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao3/sum(resposta_questao3)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao3, main="Respostas", col=gray.colors(length(resposta_questao3)),
+labels=lbls)
+```
+\end{center}
+
+Franquia da academia
+
+3.1 Qual a franquia da sua academia?
+
+\begin{center}
+Nenhuma resposta.
+\end{center}
+
+4 - Qual o público-alvo que frequenta sua academia:
+
+4.1 - Gênero
+
+\begin{center}
+```{r echo=FALSE}
+lbls = c("Homem cisgênero", "Mulher cisgênero", "Homem transexual", "Mulher transexual")
+par(mar=c(3, 8, 3, 1))
+barplot(
+  resposta_questao4.1, 
+  horiz = TRUE,
+  main="Respostas", 
+  col=gray.colors(length(resposta_questao4.1)),
+  names.arg = lbls,
+  las = 1)
+```
+\end{center}
+
+4.2 - Idade
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao4.2/sum(resposta_questao4.2)*100, digits=1)
+
+lbls = c("18 a 30 anos", "31 a 40 anos", "41 a 50 anos", "51 a 60 anos", "Mais de 61 anos")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao4.2, main="Respostas", col=gray.colors(length(resposta_questao4.2)),
+labels=lbls)
+```
+\end{center}
+
+4.3 - Frequência de consumo das atividades
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao4.3/sum(resposta_questao4.3)*100, digits=1)
+
+lbls = c("1 vez por semana", "2 vez por semana", "3 vez por semana", "4 vez por semana", "Mais de 5 vezes\npor semana")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao4.3, main="Respostas", col=gray.colors(length(resposta_questao4.3)),
+labels=lbls)
+```
+\end{center}
+
+5 - Qual a localização da sua academia
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao5/sum(resposta_questao5)*100, digits=1)
+
+lbls = c("Zona Norte da cidade", "Zona Oeste da cidade", "Zona Sul da cidade", "Zona Leste da cidade")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao5, main="Respostas", col=gray.colors(length(resposta_questao5)),
+labels=lbls)
+```
+\end{center}
+
+6 - Quantos alunos matriculados você possuía antes da pandemia do COVID-19
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao6/sum(resposta_questao6)*100, digits=1)
+
+lbls = c("Até 100 alunos", "De 101 a 200 alunos", "De 201 a 300 alunos", "De 301 a 400 alunos", "Mais de 400 alunos")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao6, main="Respostas", col=gray.colors(length(resposta_questao6)),
+labels=lbls)
+```
+\end{center}
+
+7 - A pandemia causada pelo vírus COVID-19 afetou o seu negócio?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao7/sum(resposta_questao7)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao7, main="Respostas", col=gray.colors(length(resposta_questao7)),
+labels=lbls)
+```
+\end{center}
+
+8 - As novas ferramentas de trabalho contribuíram para que sua academia se mantivesse estável nessa pandemia do COVID-19?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao8/sum(resposta_questao8)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao8, main="Respostas", col=gray.colors(length(resposta_questao8)),
+labels=lbls)
+```
+\end{center}
+
+9 - Foi preciso fechar o sua academia devido à pandemia do COVID-19?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao9/sum(resposta_questao9)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao9, main="Respostas", col=gray.colors(length(resposta_questao9)),
+labels=lbls)
+```
+\end{center}
+
+10 - Sua atividade econômica, no caso academia, já passou por alguma outra crise global?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao10/sum(resposta_questao10)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao10, main="Respostas", col=gray.colors(length(resposta_questao10)),
+labels=lbls)
+```
+\end{center}
+
+11 - Sua academia ofereceu algum tipo de serviço extra aos usuários nesse período de pandemia, como aulas online, por exemplo?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao11/sum(resposta_questao11)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao11, main="Respostas", col=gray.colors(length(resposta_questao11)),
+labels=lbls)
+```
+\end{center}
+
+12 - Quando os governos estadual e municipal, determinarem os protocolos para a retomada das academias, você acredita que seu público voltará imediatamente?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao12/sum(resposta_questao12)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao12, main="Respostas", col=gray.colors(length(resposta_questao12)),
+labels=lbls)
+```
+\end{center}
+
+13 - Na sua opinião, os alunos da academia que se mantiveram ativos durante a quarentena, irão preferir realizar os treinos em suas casas?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao13/sum(resposta_questao13)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao13, main="Respostas", col=gray.colors(length(resposta_questao13)),
+labels=lbls)
+```
+\end{center}
+
+14 - Qual foi a porcentagem de perdas de matrículas, nesse período de pandemia?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao14/sum(resposta_questao14)*100, digits=1)
+
+lbls = c("De 5% a 15% do número\ntotal de alunos", "De 16% a 25% do número\ntotal de alunos", "26% do 35% do número\ntotal de alunos", "De 36% a 45% do número\ntotal de alunos", "Mais de 50% do número\ntotal de alunos")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao14, main="Respostas", col=gray.colors(length(resposta_questao14)),
+labels=lbls)
+```
+\end{center}
+
+15 - Os professores precisaram ser desligados nesse período de pandemia?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao15/sum(resposta_questao15)*100, digits=1)
+
+lbls = c("Sim", "Não")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao15, main="Respostas", col=gray.colors(length(resposta_questao15)),
+labels=lbls)
+```
+\end{center}
+
+16 - Se a pandemia se prolongar durante muito tempo, que estratégias de gestão serão tomadas?
+
+\begin{center}
+```{r echo=FALSE}
+piepercent = round(resposta_questao16/sum(resposta_questao16)*100, digits=1)
+
+lbls = c("Encerramento oficial\ndas atividades", "Explorar outras alternativas de\nserviços (reinvenção do negócio)", "Obter financiamento\ngovernamental", "Obter um \"investidor\nanjo\"")
+lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+pie(resposta_questao16, main="Respostas", col=gray.colors(length(resposta_questao16)),
+labels=lbls)
+```
+\end{center}
+
+17 - Quais dificuldades que a academia enfrentará quando as atividades voltarem ao “novo normal”?
+
+```{r echo=FALSE, results='asis'}
+template = "* %s\n\n" # dont't forget the newline
+
+for (value in data$questao17){
+    cat(sprintf(template, value))
+}
+```
 
 ## 7. Referências
 
