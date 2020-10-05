@@ -1,5 +1,6 @@
 ---
-title: "Impacto do COVID-19 no segmento de academia de Bauru"
+title: "Os Impactos da COVID-19 no segmento das academias de ginástica da cidade de Bauru-SP"
+subtitle: "Análise dos obtidos por meio da aplicação de questionário"
 author: 
 - Alexandre Cruz Nicolas 
 - Carina Nascimento 
@@ -7,8 +8,9 @@ author:
 - Emerson Carlos Sarti Ferrasi 
 - Uemerson Pinheiro Junior
 date: '2020'
-abstract: Adicionar o resumo do artigo aqui.
-tags: COVID-19
+abstract:
+  Esta pesquisa desenvolvida como parte integrante do trabalho de conclusão  da disciplina Ciência de Dados, junto ao Programa de Pós Graduação em Mídia e Tecnologia da Faculdade de Arquitetura Artes e Comunicação -FAAC /UNESP Campus de Bauru, ministrada pelo Prof. Associado João Pedro Albino do Departamento de Computação Faculdade de Ciências -FC /UNESP Campus de  Bauru, teve como objetivo identificar os impactos e consequências da pandemia de COVID- em Bauru-SP no ano de 2020 no segmento das academias de ginástica na cidade. A pesquisa de caráter quantitativa na modalidade Survey foi enviada pelos discentes da disciplina via google forms para os proprietários de academias de ginástica e obteve resultados consideráveis acerca dos impactos causados pelo distanciamento social como medida de controle à disseminação do vírus SARS-CoV-2 causador da síndrome respiratória.
+tags: COVID-19, Ciência de dados, Pesquisa
 lang: pt-BR
 fontsize: 12pt
 toc: yes
@@ -17,10 +19,11 @@ affiliation: Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP/Bau
 e-mail: uemersonpinheirojunior@gmail.com
 indent: true
 output:
-  pdf_document: default
-    
-  word_document: default
   
+  pdf_document: 
+    
+    latex_engine: xelatex
+  word_document: default
 header-includes:
    - \usepackage{indentfirst}
 ---
@@ -45,19 +48,49 @@ library("readxl")
 
 \setlength{\parindent}{0.5cm}
 
-## 1. Contextualização da Pesquisa
+## 1. CONTEXTUALIZAÇÃO DA PESQUISA
 
-De acordo com Malhotra (2012, p. 31), a "definição do problema é a etapa mais importante” da pesquisa e pode ser entendida como um conjunto de informações necessárias para facilitar a tomada de decisões num processo estratégico. O problema irá definir qual será o propósito da pesquisa que necessita de atenção e informações completas, para que possa resultar em dados e informações úteis e precisas. Nesse sentido, o presente projeto de pesquisa visa levantar informações sobre o COVID-19, doença infeciosa causada pelo coronavírus da síndrome respiratória aguda grave 2. O primeiro caso de COVID-19 no mundo, foi em  dezembro de 2019 na cidade de Wuhan, na China, e o surto inicial deu origem a uma pandemia global com 8 milhões de casos confirmados e 466 mil mortes em todo o mundo (WIKIPEDIA, 2020). No Brasil, até o momento existem mais de 1 milhão de pessoas infectadas e cerca de 50 mil mortes. Durante todo esse período, como se pode observar, milhões de vida foram perdidas e também uma série de empresas, negócios e empregos foram afetados. Acredita-se que todos os setores da economia foram afetados, no entanto, alguns em especial, como as academias, possuem reflexos ainda maiores, pois ainda não tiveram a liberação de retomada, dos governos municipal e estadual. Dentro desse contexto, a presente pesquisa visa compreender os efeitos do coronavírus na vida das pessoas, em especial na cidade Bauru, que já computa quase mil casos da doença e tiveram diversos setores impactados,  como o segmento das academias.
+De acordo com Malhotra (2012, p. 31), a "definição do problema é a etapa mais importante” da pesquisa e pode ser entendida como um conjunto de informações necessárias para facilitar a tomada de decisões num processo estratégico. O problema irá definir qual será o propósito da pesquisa que necessita de atenção e informações completas, para que possa resultar em dados e informações úteis e precisas. Nesse sentido, o presente projeto de pesquisa visa levantar informações sobre os impactos provocados pela COVID-19. 
 
-Portanto, para contemplar a pesquisa a ser realizada, para o trabalho final da disciplina de Ciência de Dados, o problema a ser solucionado diz respeito ao seguinte questionamento: Qual o impacto do COVID-19 (coronavírus) nas academias da cidade de Bauru?
+A COVID-19 é Causada pelo vírus SARS-CoV-2 (do inglês Severe acute respiratory syndrome coronavirus 2), relatado pela primeira vez dezembro de 2019 em Wuhan (China) se espalhou pandemicamente e já causou 999.853 mortes no mundo (dados de 28/09/2020 segundo a World Health Organization (‎2020)‎.
 
-## 2. Hipótese
+À medida que novos casos foram notificados em mais de 75 países, a Organização Mundial da Saúde (OMS) declarou que a COVID-19 (doença causada pela infecção por SARS-CoV-2) é uma emergência global de saúde pública como também afirma a World Health Organization (‎2020)‎.
 
-A hipótese, segundo Rudio (2007), significa:
+O Brasil já registra, até o momento, 4.732.309 casos confirmados e 141.741 óbitos, conforme aponta o Painel de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil apresentado pelo Ministério da Saúde. Contudo, tais números são considerados subestimados uma vez que não há exames laboratoriais disponíveis para todos e estima-se que a maioria dos infectados são portadores assintomáticos.
+
+A confirmação diagnóstica se dá, principalmente, a partir da detecção do RNA do SARS-CoV-2 pela técnica molecular de RT-PCR (reação em cadeia da polimerase com transcrição reversa) em material colhido da nasofaringe ou da orofaringe seguindo as Diretrizes para Diagnóstico e Tratamento da COVID-19.
+
+Os sintomas mais comuns da infecção são: febre, tosse seca, fadiga, dispneia, mialgia e anormalidades na tomografia computadorizada (TC) do tórax como apontam Huang, et al (2020).
+
+Porém, alguns pacientes evoluem clinicamente para complicações graves de pneumonia, incluindo síndrome do desconforto respiratório agudo, edema pulmonar, lesão renal aguda ou insuficiência de múltiplos órgãos.
+
+Zhou et al (2020) ressaltam que a maior parte dos casos fatais tem ocorrido em pacientes idosos ou que apresentam comorbidades (doença cardiovascular, diabetes mellitus, doença pulmonar crônica, hipertensão e câncer). A mesma posição é corroborada por Wu et al (2020).
+
+Ainda assim têm se observado casos graves em pacientes mais jovens e/ou sem comorbidades relatadas. Cerca de 80% dos indivíduos infectados podem permanecer assintomáticos ou com sintomas leves e outros 20% apresentam complicações graves.
+
+té o momento, não existem evidências conclusivas que indiquem uma terapia farmacológica específica para a COVID-19 e deste modo diversos tipos de medicamentos vêm sendo testados.  Kujanski et al (2020) e vários outros pesquisadores avaliaram o uso dos antivirais. 
+
+O Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease- COVID-19 (2020) realizou estudos com corticosteroides e os antimaláricos, por sua vez, foram pesquisados por Cortegiani et al (2020). Esta diversidade de estudos nos apontam que a cada dia novas pesquisas vêm sendo desenvolvidas e registradas em busca de um medicamento que possa curar ou minimizar a infecção.
+
+Até o momento não há vacina disponível, contudo várias estão em estágio avançado de desenvolvimento como apontam Amana e Krammer (2020) e segundo a OMS, a melhor maneira de proteger a si e aos outros da COVID-19 é lavar regularmente e cuidadosamente as mãos com água e sabão e, caso não seja possível, limpeza à base de álcool; manter, pelo menos, 1 metro de distância entre você e outros; evitar lugares com aglomerações de pessoas; usar máscara de tecido em lugares públicos; evitar tocar nos olhos, nariz e boca; ao tossir ou espirrar, cobrir a boca e o nariz com o cotovelo ou tecido dobrado e, em seguida, descartar o tecido usado em local apropriado e lavar as mãos.
+
+E caso apresente febre, tosse e dificuldade para respirar, procure atendimento médico e redobre os cuidados já citados anteriormente; mantenha-se atualizado com informações de fontes confiáveis como recomendam a World Health Organization (‎2020)‎.
+
+Dentro desse contexto, a presente pesquisa visa compreender os efeitos da pandemia  de COVID-19 na vida das pessoas, em especial na cidade Bauru, que até o presente momento já tem em mais de 11.000 casos e 191 óbitos e que inevitavelmente teve diversos setores de sua economia impactados, como por exemplo o segmento das academias.
+
+Portanto, para contemplar a pesquisa que foi realizada como parte integrante do trabalho de conclusão da disciplina de Ciência de Dados, junto ao Programa de Pós Graduação em Mídia e Tecnologia da Faculdade de Arquitetura Artes e Comunicação -FAAC /UNESP Campus de  Bauru, ministrada pelo Prof. Associado João Pedro Albino do Departamento de Computação Faculdade de Ciências -FC /UNESP Campus de  Bauru, durante o 1º semestre de 2020 e que a partir de 16 de março passou a ser realizada de forma remota por meio da ferramenta  Meet ® em função do distanciamento social imposto pela pandemia.
+
+Desta forma, o problema a ser solucionado diz respeito ao seguinte questionamento: Qual o impacto do COVID-19 (coronavírus) nas academias da cidade de Bauru?
+
+## 2. HIPÓTESE
+
+A hipótese, segundo Rudio (2007), significa:\newline
 
 \setlength{\parindent}{0pt}
-\setlength{\leftskip}{3cm}
+\setlength{\leftskip}{1.5cm}
+
 “uma suposição que se faz na tentativa de explicar o que se desconhece. Esta suposição tem por característica o fato de ser provisória, devendo, portanto, ser testada para se verificar sua validade. Trata-se, então, de se antecipar um conhecimento, na expectativa de ser comprovado para poder ser admitido.”, (2007, p. 97).
+\linebreak
 
 <!-- Restaura o leftskip para 0.5 cm -->
 \setlength{\leftskip}{0cm}
@@ -65,46 +98,44 @@ A hipótese, segundo Rudio (2007), significa:
 
 De acordo com o conceito de Rudio (2007) trata-se de uma pressuposição ou teoria que o pesquisador faz sobre uma característica da população que está sendo investigada.
 
-Pressupõe-se que o público potencial, empresários do segmento de academia da cidade de Bauru, tiveram uma perda substancial do número de alunos em seus espaços, pois com o COVID-19, o  público frequentador foi impedido de realizar seus treinos na academia e optou por realizar as mesmas atividades, de forma de adaptada, em suas casas. Acredita-se que esse movimento, fez com que os alunos cancelassem suas matrículas.
+Pressupõe-se que o público considerado potencial para o desenvolvimento desta pesquisa, são os  empresários do segmento de academias de ginástica da cidade de Bauru,  que passou por uma perda substancial do número de alunos em seus espaços, pois com a COVID-19, o  público frequentador foi impedido de realizar seus treinos na academia e optou por realizar as mesmas atividades, de forma de adaptada, em suas casas. Acredita-se que esse movimento, fez com que os alunos cancelassem suas matrículas e mesmo com a liberação do retorno presencial seguindo medidas sanitárias determinadas pelo Decreto Nº 14.862, DE 27 JUNHO DE 2.020 o número de alunos junto as academias ainda permanece abaixo do que era no período anterior à pandemia.
 
-## 3. Justificativa
+## 3. JUSTIFICATIVA
 
 A presente pesquisa torna-se relevante, pois visa ressaltar a importância de uma melhor compreensão do impacto do COVID-19 e seus desdobramentos no segmento de academia de Bauru, que conforme dito anteriormente, pressupõe-se que tenha sofrido um grande impacto. Ou seja, a pesquisa se justifica por possibilitar a análise da temática e com isso, promover um impacto positivo no campo de estudo do setor. Nesse sentido, acredita-se que por meio da pesquisa será possível identificar a situação das academias da cidade de Bauru, tendo em vista a pandemia do Coronavírus e a possível influência em seus negócios.
 
-## 4. Objetivo Geral e Objetivos Específicos
+## 4. OBJETIVO GERAL E OBJETIVOS ESPECÍFICOS
 
 ### 4.1 Objetivo Geral
 
-* Identificar o impacto do COVID-19 no consumo de atividades em academias na cidade de Bauru. 
+* Identificar o impacto do COVID-19 no consumo de atividades em academias na cidade de Bauru.
 
-### 4.2  Objetivos Específicos
+### 4.2 Objetivos Específicos
 
 * Conhecer o público-alvo frequentador das academias
 * Identificar a adaptação das academias nesse novo cenário;
 * Observar o impacto do COVID-19 no número de matrículas das academias
 * Buscar compreensão do consumo de atividades de academia pós-COVID 19
 
-## 5. Caracterização da Pesquisa
+## 5. CARACTERIZAÇÃO DA PESQUISA
 
-Para este projeto acadêmico, o tipo de pesquisa mais adequado ao problema encontrado é a Survey.
-
-Segundo Babbie (1999) a Pesquisa Survey, termo em inglês que se destina a pesquisa em grande escala caracteriza-se por ser uma abordagem quantitativa, que visa apresentar as opiniões das pessoas por meio de questionários ou entrevistas.
+Para este projeto acadêmico, o tipo de pesquisa mais adequado ao problema encontrado é a Survey que segundo Babbie (1999),deriva-se do termo em inglês que se destina a pesquisa em grande escala  e caracteriza-se por ser uma abordagem quantitativa, que visa apresentar as opiniões das pessoas por meio de questionários ou entrevistas.
 
 Bastaste utilizada em pesquisas eleitorais apresenta os resultados obtidos por um recorte da população tem como seus primeiros registros de uso o ano de 1880 onde Marx enviou 25 mil questionários pelos correios para os trabalhadores franceses com o objetivo de levantar que tipo de exploração esses trabalhadores sofriam por parte das classes patronais. Já no século XX esta técnica de pesquisa passou a ser utilizada com fins comerciais para o levamento de opiniões sobre produtos e empresas.
 
-Babbie (2001) elenca sete características gerais da pesquisa Survey:
+Babbie (2001) elenca sete características gerais da pesquisa Survey a se considerar:
 
-1. Os dados facilitam a aplicação cuidadosa do pensamento lógico;
-2. Sempre que o pesquisador procura explicar as razões para e as fontes de eventos, características e correlações observados, a pesquisa deve assumir uma postura determinística baseada nas relações de causa e efeito;
-3. Surveys amostrais são realizados para entender-se a população maior da qual a amostra foi inicialmente selecionada. Análises explicativas em pesquisas de survey visam a desenvolver proposições gerais sobre o comportamento humano;
-4. Replicar um achado entre subgrupos diferentes (por sexo, por idade, etc.) fortalece a certeza de que ele representa um fenômeno geral na sociedade;
+1. Os dados facilitam a aplicação cuidadosa do pensamento lógico; 
+2. Sempre que o pesquisador procura explicar as razões para e as fontes de eventos, características e correlações observados, a pesquisa deve assumir uma postura determinística baseada nas relações de causa e efeito; 
+3. Surveys amostrais são realizados para entender-se a população maior da qual a amostra foi inicialmente selecionada. Análises explicativas em pesquisas de survey visam a desenvolver proposições gerais sobre o comportamento humano; 
+4. Replicar um achado entre subgrupos diferentes (por sexo, por idade, etc.) fortalece a certeza de que ele representa um fenômeno geral na sociedade; 
 5. Com a pesquisa, busca-se o máximo de compreensão com o menor número de variáveis possível; 
-6. A conceituação e a medição de variáveis estão no âmago da prática científica. Se as variáveis não são adequadamente conceituadas e medidas, correlações observadas entre elas podem não fazer sentido. Assim, se observadores independentes discordam sobre como variáveis foram medidas, podem discordar logicamente da conclusão geral;
-7. Nunca esquecer que o ato de medir é um dos problemas da pesquisa em survey. A simples presença de pesquisadores pode afetar os entrevistados. Pedir uma opinião pode cristalizar uma opinião que existia. Alguns respondentes podem formar opiniões na hora. 
+6. A conceituação e a medição de variáveis estão no âmago da prática científica. Se as variáveis não são adequadamente conceituadas e medidas, correlações observadas entre elas podem não fazer sentido. Assim, se observadores independentes discordam sobre como variáveis foram medidas, podem discordar logicamente da conclusão geral; ·
+7. Nunca esquecer que o ato de medir é um dos problemas da pesquisa em survey. A simples presença de pesquisadores pode afetar os entrevistados. Pedir uma opinião pode cristalizar uma opinião que existia. Alguns respondentes podem formar opiniões na hora. Por isso, é necessário que o cientista social tenha uma compreensão mais sofisticada da medição e da conceituação.
 
-Por isso, é necessário que o cientista social tenha uma compreensão mais sofisticada da medição e da conceituação.
+Desta forma, considera-se que a modalidade de pesquisa escolhida pode atender as necessidades da pesquisa em questão.
 
-## 6. Método de Pesquisa
+## 6. MÉTODO DE PESQUISA
 
 De acordo com Fonseca (2002) o método de pesquisa é a escolha de um processo sistemático para a descrição de fenômenos, assemelhando-se ao método científico que consiste em delimitar um problema, realizar observações e interpretá-los com base nos dados coletados e nas teorias existentes.
 
@@ -114,26 +145,26 @@ Erros de análise e interpretação também são evitados na pesquisa quantitati
 
 A pesquisa qualitativa deve ser clara e objetiva e para POLIT et al., (2004) se caracteriza por:
 
-* Focaliza uma quantidade pequena de conceitos
-* Inicia com ideias preconcebidas do modo pelo qual os conceitos estão relacionados
-* Utiliza procedimentos estruturados e instrumentos formais para coleta de dados
-* Coleta os dados mediante condições de controle
-* Enfatiza a objetividade, na coleta e análise dos dados
-* Analisa os dados numéricos através de procedimentos estatísticos
+* Focaliza uma quantidade pequena de conceitos 
+* Inicia com ideias preconcebidas do modo pelo qual os conceitos estão relacionados 
+* Utiliza procedimentos estruturados e instrumentos formais para coleta de dados 
+* Coleta os dados mediante condições de controle 
+* Enfatiza a objetividade, na coleta e análise dos dados 
+* Analisa os dados numéricos através de procedimentos estatísticos 
 
-### 6.1 Público/ População Universo
+### 6.1 Público / População Universo 
 
 Como população de interesse tem se os proprietários de academias de ginástica da cidade Bauru- SP. A escolha deste ramo empresarial se deu em função da importância que este segmento da economia apresenta na atualidade. 
 
-Na atualidade as academias não são mais consideradas apenas locais para a prática de atividades físicas, mas sim espaços de convivência social como aponta Arsego (2002) ao considerar os laços de amizade que se formam entre educadores e alunos.
+Na atualidade as academias não são mais consideradas apenas locais para a prática de atividades físicas, mas sim espaços de convivência social como aponta Arsego (2002) ao considerar os laços de amizade que se formam entre educadores e alunos. 
 
 Há de se considerar também que além dos fatores estéticos as academias trazem importante contribuição à saúde de seus alunos quando as atividades são praticadas de forma regular. 
 
-A cidade de Bauru tem cerca de 200 academias que desde o mês de março tiveram suas atividades suspensas em função da quarentena para a redução da disseminação da Covid-19.
+A cidade de Bauru tem cerca de 200 academias que desde março de 2020 por meio do DECRETO Nº 14.679, DE 24 DE MARÇO DE 2.020 onde tiveram suas atividades suspensas em função da quarentena para a redução da disseminação da Covid-19. 
 
-Desde a paralização das atividades presencias, muitas academias precisaram se adequar aos formatos de aulas online com o objetivo de manter sua clientela. 
+Desde a paralização das atividades presencias, muitas academias precisaram se adequar aos formatos de aulas online com o objetivo de manter sua clientela.
 
-Observa-se que  que no dia 01 de junho por meio de um decreto municipal as academias puderam reabrir seguindo normas de higiene e distanciamento social para alunos com prescrição médica para a prática de atividades físicas , porém em novo decreto municipal publicado no dia 21 de junho tal permissão foi cancelada em função do avanço da pandemia pela cidade. 
+Observa-se que  que no dia 01 de junho por meio do DECRETO Nº 14.810, DE 30 DE MAIO DE 2020 as academias puderam reabrir seguindo normas de higiene e distanciamento social para alunos com prescrição médica para a prática de atividades físicas , porém em novo decreto municipal publicado no dia 21 de junho tal permissão foi cancelada em função do avanço da pandemia pela cidade.
 
 Diante deste cenário observa-se a importância de compreender quais os impactos que a pandemia teve sobre as academias e como os proprietários se adaptaram as novas modalidades de práticas de exercícios por meio dos recursos tecnológicos.
 
@@ -143,108 +174,15 @@ Entende-se por amostragem a quantidade de pessoas pertencentes a um mesmo grupo 
 
 As amostras podem ser de natureza probabilísticas, onde tem a capacidade de expressar matematicamente o grupo selecionado. Podem também ser não probabilística e nesse caso requerem uma moldura de amostragem.
 
+Nesta pesquisa foi obtida uma amostra de 9 participantes por meio de uma amostra obtida entre os proprietários de academias da cidade de Bauru. Observa-se que este total de participantes é bem abaixo do esperado.
+
 ### 6.3 Instrumentos e técnicas de coleta
 
-Para a pesquisa Survey o uso de questionários se configura como uma opção eficiente para a coleta de dados.
+Para a pesquisa Survey o uso de questionários se configura como uma opção eficiente para a coleta de dados. Ressalta-se que a construção do questionário deve contemplar os objetivos pretendidos na pesquisa como aponta Babbie (2001) para a posterior distribuição aos sujeitos da pesquisa.
 
-Ressalta-se que a construção do questionário deve contemplar os objetivos pretendidos na pesquisa como aponta Babbie (2001) para a posterior distribuição aos sujeitos da pesquisa. 
+Optou-se pela construção de um formulário de pesquisa online disponível pela ferramenta Forms®. A escolha deste instrumento deu-se em função da praticidade na coleta dos dados, bem como na boa aceitação que esta modalidade de questionário tem na sociedade, principalmente por ser de fácil acesso e rapidez.
 
-Optou-se pela construção de um formulário de pesquisa online disponível pela ferramenta google forms. A escolha deste instrumento deu-se em função da praticidade na coleta dos dados, bem como na boa aceitação que esta modalidade de questionário tem na sociedade, principalmente por ser de fácil acesso e rapidez. 
-
-### 6.4 Análise dos dados
-
-```{r echo=FALSE}
-data = read_excel("../data/survey-responses.xlsx", sheet = "responses")
-
-pesquisados = nrow(data) # Sem o cabeçalho
-
-resposta_questao1 = c(sum(data$questao1 == "Sim"), sum(data$questao1 == "Não"))
-resposta_questao2 = c(sum(data$questao2 == "Sim"), sum(data$questao2 == "Não"))
-resposta_questao3 = c(sum(data$questao3 == "Sim"), sum(data$questao3 == "Não"))
-
-trim = function (x) gsub("^\\s+|\\s+$", "", x)
-
-count_word_split_by = function (data, word, split_by){
-  count = 0
-  words = strsplit(data, split_by)
-  
-  for (values in words){
-    for(value in values){
-      if (trim(value) == word){
-        count = count + 1
-      }
-    }
-  }
-  
-  return (count)
-}
-
-resposta_questao4.1 = 
-  c(
-    count_word_split_by(data$questao4.1, "Homem cisgênero", ","), 
-    count_word_split_by(data$questao4.1, "Mulher cisgênero", ","), 
-    count_word_split_by(data$questao4.1, "Homem transexual", ","), 
-    count_word_split_by(data$questao4.1, "Mulher transexual", ","))
-
-resposta_questao4.2 = 
-  c(
-    sum(data$questao4.2 == "18 – 30 anos"), 
-    sum(data$questao4.2 == "31 – 40 anos"),
-    sum(data$questao4.2 == "41 – 50 anos"),
-    sum(data$questao4.2 == "51 – 60 anos"),
-    sum(data$questao4.2 == "Mais de 61 anos"))
-
-resposta_questao4.3 = 
-  c(
-    sum(data$questao4.3 == "1 vez por semana"), 
-    sum(data$questao4.3 == "2 vez por semana"),
-    sum(data$questao4.3 == "3 vez por semana"),
-    sum(data$questao4.3 == "4 vez por semana"),
-    sum(data$questao4.3 == "Mais de 5 vezes por semana"))
-
-resposta_questao5 = 
-  c(
-    sum(data$questao5 =="Zona Norte da cidade"), 
-    sum(data$questao5 =="Zona Oeste da cidade"), 
-    sum(data$questao5 =="Zona Sul da cidade"), 
-    sum(data$questao5 =="Zona Leste da cidade"))
-
-resposta_questao6 = 
-  c(
-     sum(data$questao6 == "Até 100 alunos"), 
-     sum(data$questao6 == "De 101 a 200 alunos"), 
-     sum(data$questao6 == "De 201 a 300 alunos"), 
-     sum(data$questao6 == "De 301 a 400 alunos"), 
-     sum(data$questao6 == "Mais de 400 alunos"))
-
-resposta_questao7 = c(sum(data$questao7 == "Sim"), sum(data$questao7 == "Não"))
-resposta_questao8 = c(sum(data$questao8 == "Sim"), sum(data$questao8 == "Não"))
-resposta_questao9 = c(sum(data$questao9 == "Sim"), sum(data$questao9 == "Não"))
-resposta_questao10 = c(sum(data$questao10 == "Sim"), sum(data$questao10 == "Não"))
-resposta_questao11 = c(sum(data$questao11 == "Sim"), sum(data$questao11 == "Não"))
-resposta_questao12 = c(sum(data$questao12 == "Sim"), sum(data$questao12 == "Não"))
-resposta_questao13 = c(sum(data$questao13 == "Sim"), sum(data$questao13 == "Não"))
-
-resposta_questao14 = 
-  c(
-    sum(data$questao14 == "De 5% a 15% do número total de alunos"), 
-    sum(data$questao14 == "De 16% a 25% do número total de alunos"), 
-    sum(data$questao14 == "26% do 35% do número total de alunos"), 
-    sum(data$questao14 == "De 36% a 45% do número total de alunos"), 
-    sum(data$questao14 == "Mais de 50% do número total de alunos"))
-
-resposta_questao15 = c(sum(data$questao15 == "Sim"), sum(data$questao15 == "Não"))
-
-resposta_questao16 =
-  c(
-    sum(data$questao16 == "Encerramento oficial das atividades"), 
-    sum(data$questao16 == "Explorar outras alternativas de serviços (reinvenção do negócio)"),
-    sum(data$questao16 == "Obter financiamento governamental"), 
-    sum(data$questao16 == "Obter um “investidor anjo”"))
-```
-
-Nessa pesquisa, `r pesquisados` pessoas participaram.
-
+O formulário contendo as questões foi enviado pelo aplicativo WhatsApp® para os proprietários das academias da cidade de Bauru.
 
 ### 6.4 Análise dos dados
 
@@ -337,10 +275,6 @@ resposta_questao16 =
     sum(data$questao16 == "Obter financiamento governamental"), 
     sum(data$questao16 == "Obter um “investidor anjo”"))
 ```
-
-Nessa pesquisa, `r pesquisados` pessoas participaram.
-
-1 - Você é empresário ou empresária do segmento de academia?
 
 \begin{center}
 ```{r echo=FALSE}
@@ -349,12 +283,12 @@ piepercent = round(resposta_questao1/sum(resposta_questao1)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao1, main="Respostas", col=gray.colors(length(resposta_questao1)),
+pie(resposta_questao1, col=gray.colors(length(resposta_questao1)),
 labels=lbls)
 ```
 \end{center}
-  
-2 - A academia é seu único negócio?
+
+Tendo em vista a pesquisa realizada, sobre a situação das academias no período de pandemia, observou-se que 100% dos entrevistados são empresários do presente ramo.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -363,12 +297,12 @@ piepercent = round(resposta_questao2/sum(resposta_questao2)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao2, main="Respostas", col=gray.colors(length(resposta_questao2)),
+pie(resposta_questao2, col=gray.colors(length(resposta_questao2)),
 labels=lbls)
 ```
 \end{center}
 
-3 - Sua academia pertence à alguma franquia?
+66,7% dos empresários responderam que a academia é seu único negócio, ou seja, sua principal fonte de receita, contra 33,3% que possuem outros negócios.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -377,38 +311,30 @@ piepercent = round(resposta_questao3/sum(resposta_questao3)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao3, main="Respostas", col=gray.colors(length(resposta_questao3)),
+pie(resposta_questao3, col=gray.colors(length(resposta_questao3)),
 labels=lbls)
 ```
 \end{center}
 
-Franquia da academia
-
-3.1 Qual a franquia da sua academia?
-
-\begin{center}
-Nenhuma resposta.
-\end{center}
-
-4 - Qual o público-alvo que frequenta sua academia:
-
-4.1 - Gênero
+Questionados sobre franquias, observou-se que 100% dos entrevistados, não possui nenhum vínculo ou são associados a franquias do segmento de academias.
 
 \begin{center}
 ```{r echo=FALSE}
+
 lbls = c("Homem cisgênero", "Mulher cisgênero", "Homem transexual", "Mulher transexual")
-par(mar=c(3, 8, 3, 1))
+lbls = paste(lbls, c(88.9, 88.9, 0, 11.1), "%", sep=" ") # adicionar % (porcentagem) aos rótulos
+
+par(mar=c(3, 12, 3, 1))
 barplot(
   resposta_questao4.1, 
   horiz = TRUE,
-  main="Respostas", 
   col=gray.colors(length(resposta_questao4.1)),
   names.arg = lbls,
   las = 1)
 ```
 \end{center}
 
-4.2 - Idade
+Quando inquiridos sobre o gênero do público-alvo que frequenta academias, 88,9% são homem cisgênero, 88,9% mulher cisgênero e 11,1% mulher transexual.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -417,12 +343,12 @@ piepercent = round(resposta_questao4.2/sum(resposta_questao4.2)*100, digits=1)
 lbls = c("18 a 30 anos", "31 a 40 anos", "41 a 50 anos", "51 a 60 anos", "Mais de 61 anos")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao4.2, main="Respostas", col=gray.colors(length(resposta_questao4.2)),
+pie(resposta_questao4.2, col=gray.colors(length(resposta_questao4.2)),
 labels=lbls)
 ```
 \end{center}
 
-4.3 - Frequência de consumo das atividades
+Sobre a idade do público-alvo que frequenta academias, 11,1% possui de 18 a 30 anos, 55,6% estão na faixa de 31 a 40 anos, 11,1% de 41 a 50 anos, 11,1% tem idade entre 51 a 60 anos e 11,1% mais de 61 anos.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -431,12 +357,12 @@ piepercent = round(resposta_questao4.3/sum(resposta_questao4.3)*100, digits=1)
 lbls = c("1 vez por semana", "2 vez por semana", "3 vez por semana", "4 vez por semana", "Mais de 5 vezes\npor semana")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao4.3, main="Respostas", col=gray.colors(length(resposta_questao4.3)),
+pie(resposta_questao4.3, col=gray.colors(length(resposta_questao4.3)),
 labels=lbls)
 ```
 \end{center}
 
-5 - Qual a localização da sua academia
+Com relação à frequência de atividades do público, é possível verificar que 55,6% vão à academia 4 vezes por semana, 22,2% 2 vezes por semana, 11,1% 3 vezes por semana e 11,1% mais de 5 vezes por semana.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -445,12 +371,12 @@ piepercent = round(resposta_questao5/sum(resposta_questao5)*100, digits=1)
 lbls = c("Zona Norte da cidade", "Zona Oeste da cidade", "Zona Sul da cidade", "Zona Leste da cidade")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao5, main="Respostas", col=gray.colors(length(resposta_questao5)),
+pie(resposta_questao5, col=gray.colors(length(resposta_questao5)),
 labels=lbls)
 ```
 \end{center}
 
-6 - Quantos alunos matriculados você possuía antes da pandemia do COVID-19
+A localização do público-alvo que frequentam academia, possuem representação de 44,4% na Zona Norte da cidade, 33,3% moram na Zona Oeste e 22,2% na Zona Sul da cidade.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -459,12 +385,12 @@ piepercent = round(resposta_questao6/sum(resposta_questao6)*100, digits=1)
 lbls = c("Até 100 alunos", "De 101 a 200 alunos", "De 201 a 300 alunos", "De 301 a 400 alunos", "Mais de 400 alunos")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao6, main="Respostas", col=gray.colors(length(resposta_questao6)),
+pie(resposta_questao6, col=gray.colors(length(resposta_questao6)),
 labels=lbls)
 ```
 \end{center}
 
-7 - A pandemia causada pelo vírus COVID-19 afetou o seu negócio?
+Questionados sobre a quantidade de alunos que os empresários possuíam antes da pandemia, 55,6% afirmaram ter até 100 alunos, 22,2% de 201 a 300 alunos e 22,2% mais de 400 alunos.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -473,12 +399,12 @@ piepercent = round(resposta_questao7/sum(resposta_questao7)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao7, main="Respostas", col=gray.colors(length(resposta_questao7)),
+pie(resposta_questao7, col=gray.colors(length(resposta_questao7)),
 labels=lbls)
 ```
 \end{center}
 
-8 - As novas ferramentas de trabalho contribuíram para que sua academia se mantivesse estável nessa pandemia do COVID-19?
+Sobre a influência do COVID-19 no segmento de academia, 100% dos entrevistados apontaram que a pandemia afetou o seu negócio.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -487,12 +413,12 @@ piepercent = round(resposta_questao8/sum(resposta_questao8)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao8, main="Respostas", col=gray.colors(length(resposta_questao8)),
+pie(resposta_questao8, col=gray.colors(length(resposta_questao8)),
 labels=lbls)
 ```
 \end{center}
 
-9 - Foi preciso fechar o sua academia devido à pandemia do COVID-19?
+55,6% dos entrevistados afirmaram que as novas ferramentas de trabalho contribuíram para que sua academia se mantivesse estável na pandemia, contra 44,4% que respondeu que não.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -501,12 +427,12 @@ piepercent = round(resposta_questao9/sum(resposta_questao9)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao9, main="Respostas", col=gray.colors(length(resposta_questao9)),
+pie(resposta_questao9, col=gray.colors(length(resposta_questao9)),
 labels=lbls)
 ```
 \end{center}
 
-10 - Sua atividade econômica, no caso academia, já passou por alguma outra crise global?
+Para 77,8% dos empresários foi necessário fechar a academia na pandemia, contra 22,2% que afirmou não ter sido necessário.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -515,12 +441,12 @@ piepercent = round(resposta_questao10/sum(resposta_questao10)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao10, main="Respostas", col=gray.colors(length(resposta_questao10)),
+pie(resposta_questao10, col=gray.colors(length(resposta_questao10)),
 labels=lbls)
 ```
 \end{center}
 
-11 - Sua academia ofereceu algum tipo de serviço extra aos usuários nesse período de pandemia, como aulas online, por exemplo?
+Quando inquiridos sobre terem participado por alguma outra crise global, 88,9% afirmaram não ter passado por crises anteriores, contra 11,1% que respondeu positivamente.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -529,12 +455,12 @@ piepercent = round(resposta_questao11/sum(resposta_questao11)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao11, main="Respostas", col=gray.colors(length(resposta_questao11)),
+pie(resposta_questao11, col=gray.colors(length(resposta_questao11)),
 labels=lbls)
 ```
 \end{center}
 
-12 - Quando os governos estadual e municipal, determinarem os protocolos para a retomada das academias, você acredita que seu público voltará imediatamente?
+Durante esse período de pandemia, 77,8% dos respondentes afirmaram que sua academia ofereceu algum tipo de serviço extra aos usuários, como aulas online, contra 22,2% que não ofereceram nenhuma atividade específica.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -543,12 +469,12 @@ piepercent = round(resposta_questao12/sum(resposta_questao12)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao12, main="Respostas", col=gray.colors(length(resposta_questao12)),
+pie(resposta_questao12, col=gray.colors(length(resposta_questao12)),
 labels=lbls)
 ```
 \end{center}
 
-13 - Na sua opinião, os alunos da academia que se mantiveram ativos durante a quarentena, irão preferir realizar os treinos em suas casas?
+Perguntados sobre o retorno dos alunos, quando os decretos municipais autorizarem a reabertura, 77,8% dos entrevistados afirmaram que os alunos não retornarão imediatamente, contra 22,2% que disseram que o público voltaria.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -557,12 +483,12 @@ piepercent = round(resposta_questao13/sum(resposta_questao13)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao13, main="Respostas", col=gray.colors(length(resposta_questao13)),
+pie(resposta_questao13, col=gray.colors(length(resposta_questao13)),
 labels=lbls)
 ```
 \end{center}
 
-14 - Qual foi a porcentagem de perdas de matrículas, nesse período de pandemia?
+Sobre a participação dos alunos, 55,6% dos empresários afirmaram que os alunos que mantiveram ativos, não irão preferir realizar treinos em casa, contra 44,4% dos respondentes.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -571,12 +497,12 @@ piepercent = round(resposta_questao14/sum(resposta_questao14)*100, digits=1)
 lbls = c("De 5% a 15% do número\ntotal de alunos", "De 16% a 25% do número\ntotal de alunos", "26% do 35% do número\ntotal de alunos", "De 36% a 45% do número\ntotal de alunos", "Mais de 50% do número\ntotal de alunos")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao14, main="Respostas", col=gray.colors(length(resposta_questao14)),
+pie(resposta_questao14, col=gray.colors(length(resposta_questao14)),
 labels=lbls)
 ```
 \end{center}
 
-15 - Os professores precisaram ser desligados nesse período de pandemia?
+Com relação a perda de matrículas no período pandêmico, 44,4% afirmou ter perdido mais de 50% do total de alunos; 33,3% informou que teve uma perda de 26% a 35% do número de alunos e 11,1% de 16% a 25% e 36% a 45% do número de matrículas.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -585,12 +511,12 @@ piepercent = round(resposta_questao15/sum(resposta_questao15)*100, digits=1)
 lbls = c("Sim", "Não")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao15, main="Respostas", col=gray.colors(length(resposta_questao15)),
+pie(resposta_questao15, col=gray.colors(length(resposta_questao15)),
 labels=lbls)
 ```
 \end{center}
 
-16 - Se a pandemia se prolongar durante muito tempo, que estratégias de gestão serão tomadas?
+Perguntados sobre professores que precisaram ser desligados no período da pandemia, 55,6% dos entrevistados disseram ter sido necessário o desligamento, contra 44,4%.
 
 \begin{center}
 ```{r echo=FALSE}
@@ -599,23 +525,184 @@ piepercent = round(resposta_questao16/sum(resposta_questao16)*100, digits=1)
 lbls = c("Encerramento oficial\ndas atividades", "Explorar outras alternativas de\nserviços (reinvenção do negócio)", "Obter financiamento\ngovernamental", "Obter um \"investidor\nanjo\"")
 lbls = paste(lbls, piepercent, "%", sep=" ") # adicionar % (porcentagem) aos rótulos
 
-pie(resposta_questao16, main="Respostas", col=gray.colors(length(resposta_questao16)),
+pie(resposta_questao16, col=gray.colors(length(resposta_questao16)),
 labels=lbls)
 ```
 \end{center}
 
-17 - Quais dificuldades que a academia enfrentará quando as atividades voltarem ao “novo normal”?
+Sobre a duração da pandemia, se ela se mantiver durante muito tempo as respostas foram:
+* 55,6% dos respondentes afirmaram ter que reinventar seu negócio;
+* 22,2% citaram utilizar financiamento governamental 
+* 22,2% terão que realizar o encerramento oficial das atividades.
 
-```{r echo=FALSE, results='asis'}
-template = "* %s\n\n" # dont't forget the newline
+Questionados sobre as dificuldades que a academia enfrentará quando as atividades voltarem ao “novo normal”, os empresários responderam o seguinte:
 
-for (value in data$questao17){
-    cat(sprintf(template, value))
-}
-```
+* Terão uma grande diminuição no número de frequentadores.
+* Uso de máscaras pelos alunos e dificuldades financeiras
+* Reestabelecer o número anterior de alunos
+* Retorno das atividades em grupo
+* Insegurança dos alunos
+* Recuperação econômica
 
-## 7. Referências
+### 6.5 Considerações finais
 
-POLIT, D. F.; BECK, C. T.; HUNGLER, B. P. Fundamentos de pesquisa em enfermagem: métodos, avaliação e utilização. Trad. de Ana Thorell. 5. ed. Porto Alegre: Artmed, 200
+Diante dos números e notícias diariamente apresentados com relação à pandemia, tanto mundialmente quanto no Brasil, é inquestionável o impacto das medidas preventivas e restritivas, dos diversos decretos em nível municipal, estadual e federal e do isolamento social na vida de todas as pessoas, seja economicamente, mentalmente ou socialmente. O questionamento sobre o impacto do coronavirus nas academias na cidade de Bauru encontrou nos números levantados pela pesquisa elaborada, mesmo que em uma amostra relativamente pequena, um verdadeiro raio-x da situação enfrentada pela maioria dos empresários do ramo, com impactos diretos em seus alunos, funcionários e fornecedores. Levando-se em conta que a academia, para a maioria destes empresários é sua única fonte de renda (66,7%), que seu maior público (77,8%) se concentra em faixa etária economicamente ativa, o fato de 100% destes empresários relatarem que a pandemia afetou seu negócio não é espanto. Mesmo com suas empresas impedidas de abrirem ao público, algo absolutamente inédito para as novas gerações, eles precisaram se reinventar, onde para 44,4% deles as novas ferramentas de trabalho ajudaram a manter o negócio e partiram para soluções inovadoras e novas formas de prestação de seus serviços, tais como as aulas on-line (77,8%), é importante também considerar um efeito dominó na economia ao se levar em conta que a maioria das academias (44,4%) perderam mais da metade de seus matriculados durante as portas fechadas e como consequência 55,6% delas precisaram desligar funcionários. Mesmo com a retomada gradual de suas atividades, os efeitos para este setor em específico deverão se prolongar neste novo normal, com o receio dos alunos em voltar a frequentar as academias, levando à diminuição de matriculados porém com a esperança e natural ansiedade pelo surgimento de uma vacina que traga a devida tranquilidade e confiança nas pessoas para uma recuperação econômica, local e mundial, proporcionando  o resgate pelo convívio social sem medos e à boa e velha prática das atividades físicas individuais ou em coletividade, pois nada como a mente sã que a boa saúde física proporciona.
+
+## 7. REFERENCIAS
+
+Amanat F, Krammer F. SARS-CoV-2 Vaccines: Status Report. Immunity.52(4):583-589. 2020.
+
+BABBIE, E. (1999). Métodos de Pesquisas em Survey. Belo Horizonte-MG: Editora UFMG.
+
+BRASIL. Painel de casos de doença pelo coronavírus 2019 (COVID-19) no Brasil pelo Ministério da Saúde. Disponível em: https://covid.saude.gov.br/ Acesso em 2e set 2020.
+
+BRASIL. Diretrizes para Diagnóstico e Tratamento da COVID-19. Disponível em https://portalarquivos.saude.gov.br/images/pdf/2020/April/07/ddt-covid-19.pdf.
+Acesso em 28 set 2020.
+
+CDC. Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19). 2020.
+
+Cortegiani A, Ingoglia G, Ippolito M, et al. Asystematic review on the efficacy and safety of chloroquine for the treatment of COVID-19. J Crit Care. 2020.
+
+FONSECA, J. J. S. Metodologia da pesquisa científica. Fortaleza: UEC, 2002.
 
 MAY, T. Pesquisa social: questões, métodos e processos 1Tim May; trad. Carlos Alberto Silveira Netto Soares. - 3.ed. - Porto Alegre: Artmed, 2004.
+
+POLIT, D. F.; BECK, C. T.; HUNGLER, B. P. Fundamentos de pesquisa em enfermagem: métodos, avaliação e utilização. Trad. de Ana Thorell. 5. ed. Porto Alegre: Artmed, 2004.
+
+PREFEITURA MUNICIPAL DE BAURU- SP – Decretos municipais 
+Disponível em: https://www2.bauru.sp.gov.br/coronavirus/legislacao.aspx
+Acesso em: 30 set 2020.
+
+World Health Organization (2020). Coronavirus disease 2019 (‎‎COVID-19)‎‎: situation report, 95. World Health Organization. Disponível em: https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200424-sitrep-95-covid-19.pdf?sfvrsn=e8065831  Acesso em: 28 de set 2020.
+
+World Health Organization (‎2020). WHO announces COVID-19 outbreak a pandemic. Disponível em: https://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/news/news/2020/3/who-announces-covid-19-outbreak-a-pandemic Acesso em: 28 set 2020.
+
+##  Anexo A – Questionário
+
+O questionário pode ser acessado por meio do link: https://forms.gle/TF8hgoqoSMHNiyNS8
+
+1. Você é empresário ou empresária do segmento de academia 
+
+a) Sim 
+b) Não
+
+Observação: Se a resposta for não, encerrar a pesquisa.
+
+2. A academia é seu único negócio?
+
+a) Sim
+b) Não
+
+3. Sua academia pertence à alguma franquia?
+a) Sim
+b) Não
+
+Observação: Se a resposta for sim, vai para a próxima pergunta. Se a resposta for não pula para a pergunta quatro.\newline
+
+3.1 Qual a franquia da sua academia?\newline
+
+Resposta livre
+
+4. Qual o público-alvo que frequenta sua academia:
+
+4.1 Gênero\newline
+
+[ ] Homem cisgênero
+
+[ ] Mulher cisgênero
+
+[ ] Homem transexual
+
+[ ] Mulher transexual\newline
+
+4.2 Idade
+
+a) 18 – 30 anos
+b) 31 – 40 anos
+c) 41 – 50 anos
+d) 51 – 60 anos
+e) Mais de 61 anos
+
+4.3 Frequência de consumo das atividades
+
+a) 1 vez por semana
+b) 2 vez por semana
+c) 3 vez por semana
+d) 4 vez por semana
+e) Mais de 5 vezes por semana
+
+5. Qual a localização da sua academia
+
+a) Zona Norte da cidade
+b) Zona Oeste da cidade
+c) Zona Sul da cidade
+d) Zona Leste da cidade
+
+6. Quantos alunos matriculados você possuía antes da pandemia do COVID-19
+
+a) Até 100 alunos
+b) De 101 a 200 alunos
+c) De 201 a 300 alunos
+d) De 301 a 400 alunos
+e) Mais de 400 alunos
+
+7. A pandemia causada pelo vírus COVID-19 afetou o seu negócio?
+
+a) Sim
+b) Não (se sua resposta for não, o questionário será encerrado nesta pergunta. Agradecemos sua participação em nossa pesquisa.)
+
+Observação: Se a resposta for não, encerrar a pesquisa.
+
+8. As novas ferramentas de trabalho contribuíram para que sua academia se mantivesse estável nessa pandemia do COVID-19?
+
+a) Sim
+b) Não
+
+9. Foi preciso fechar o sua academia devido à pandemia do COVID-19?
+
+a) Sim
+b) Não
+
+10. Sua atividade econômica, no caso academia, já passou por alguma outra crise global?
+
+a) Sim
+b) Não
+
+11. Sua academia ofereceu algum tipo de serviço extra aos usuários nesse período de pandemia, como aulas online, por exemplo?
+
+a) Sim
+b) Não
+
+12. Quando os governos estadual e municipal, determinarem os protocolos para a retomada das academias, você acredita que seu público voltará imediatamente?
+
+a) Sim
+b) Não
+
+13. Na sua opinião, os alunos da academia que se mantiveram ativos durante a quarentena, irão preferir realizar os treinos em suas casas?
+
+a) Sim
+b) Não
+
+14. Qual foi a porcentagem de perdas de matrículas, nesse período de pandemia?
+
+a) De 5% a 15% do número total de alunos
+b) De 16% a 25% do número total de alunos 
+c) De 26% do 35% do número total de alunos
+d) De 36% a 45% do número total de alunos
+e) Mais de 50% do número total de alunos
+
+15. Os professores precisaram ser desligados nesse período de pandemia?
+
+a) Sim
+b) Não
+
+16. Se a pandemia se prolongar durante muito tempo, que estratégias de gestão serão tomadas?
+
+a) Encerramento oficial das atividades
+b) Explorar outras alternativas de serviços (reinvenção do negócio)
+c) Obter financiamento governamental
+d) Obter um “investidor anjo”
+
+17. Quais dificuldades que a academia enfrentará quando as atividades voltarem ao “novo normal”?
+
+Resposta livre
